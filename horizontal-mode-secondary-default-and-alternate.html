@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="al-text/html; charset=UTF-8" />
+<link rel='stylesheet' href='alex-core-layout-flexbox-with-comments.css?v=7' type='text/css' media='all'/>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<link href="https://cdn.materialdesignicons.com/5.4.55/css/materialdesignicons.min.css" rel="stylesheet">
+</head>
+
+
+<body style="font-family:Verdana; line-height:1.2; font-size:0.9em; padding:30px;">
+
+    <div class="al al-text" style="margin-top:40px;">
+        Handling the secondary dimension. The idea is this: The primary dimension is the "conserved" one.
+        For horizontal-mode elements, horizontal is the primary dimension and vertical is the secondary.
+        And for vertical-mode elements, it's the reverse. I've gone on at length about how the primary dimension works,
+        but what about the secondary? Where the primary rules are complex, the secondary rules are simple. 
+        For horizontal-mode elements, by default, they should take up all the height available.<br/>
+        For vertical-mode element, by default, they should take up all the width available.<br/> 
+    </div>
+
+
+    <div class="al al-text" style="margin-top:40px;">
+    <b>Test 1:</b><br/>Secondary Dimension, horizontal-mode default behavior.
+    </div>
+
+    <div class="al" style="height:450px;">
+        <div class="al al-vertical al-boxes">
+
+            <div class="al" style="height:100px; background-color:#0066AA;">Vertical</div>
+            <div class="al al-boxes al-greedy-2" style="background-color:steelblue; padding:20px;">
+            
+            <div class="al al-boxes al-greedy" style="background:orangered; padding:20px;">
+                I'm a horizontal-mode element, and I have 100% height, and this is the default behavior.
+            </div>
+
+            <div class="al al-rows al-greedy" style="padding:20px; background-color:#033059; color:white; width:50%;">
+
+                <div class="al" style="padding:20px; background-color: olive;">Euler</div>
+                <div class="al" style="padding:20px; background-color:orangered">Cauchy</div>
+                <div class="al" style="padding:20px; background-color: olive;">Riemann</div>
+                <div class="al" style="padding:20px; background-color:orangered">Dirac</div>
+
+            </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="al al-text" style="margin-top:40px;">
+        <b>Test 2:</b><br/>Secondary Dimension, horizontal-mode alternate behavior.
+    </div>
+
+    <div class="al" style="height:450px;">
+        <div class="al al-vertical al-boxes">
+
+            <div class="al" style="height:100px; background-color:#0066AA;">Vertical</div>
+            <div class="al al-boxes al-greedy-2 al-content-alt-secondary" style="background-color:steelblue; padding:20px;">
+            
+            <div class="al al-boxes al-greedy al-text" style="background:orangered; padding:20px;">
+                I'm a horizontal-mode element, but I don't take up all the height. I only take
+                up the height that I need. This is the alternate behavior.
+            </div>
+
+            <div class="al al-rows al-greedy" style="padding:20px; background-color:#033059; color:white; width:50%;">
+
+                <div class="al" style="padding:20px; background-color: olive;">Euler</div>
+                <div class="al" style="padding:20px; background-color:orangered">Cauchy</div>
+                <div class="al" style="padding:20px; background-color: olive;">Riemann</div>
+                <div class="al" style="padding:20px; background-color:orangered">Dirac</div>
+
+            </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+    <div class="al al-text" style="margin-top:40px;">
+        <b>Test 3:</b><br/>Secondary Dimension, horizontal-mode alternate behavior, with the <b>al-content-center-v</b>
+    </div>
+
+    <div class="al" style="height:450px;">
+        <div class="al al-vertical al-boxes">
+
+            <div class="al" style="height:100px; background-color:#0066AA;">Vertical</div>
+            <div class="al al-boxes al-greedy-2 al-content-center-v al-content-alt-secondary" 
+            style="background-color:steelblue; padding:20px;">
+            
+            <div class="al al-boxes al-greedy al-text" style="background:orangered; padding:20px;">
+                I'm a horizontal-mode element, but I don't take up all the height. I only take
+                up the height that I need. This is the alternate behavior. I also respond to 
+                the <b>al-content-center-v</b> class, so I'm centered vertically.
+            </div>
+
+            <div class="al al-rows al-greedy" style="padding:20px; background-color:#033059; color:white; width:50%;">
+
+                <div class="al" style="padding:20px; background-color: olive;">Euler</div>
+                <div class="al" style="padding:20px; background-color:orangered">Cauchy</div>
+                <div class="al" style="padding:20px; background-color: olive;">Riemann</div>
+                <div class="al" style="padding:20px; background-color:orangered">Dirac</div>
+
+            </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <div class="al al-text" style="margin-top:40px;">
+        <b>Test 4:</b><br/>Secondary Dimension, horizontal-mode alternate behavior, with the <b>al-content-to-bottom</b>
+    </div>
+
+    <div class="al" style="height:450px;">
+        <div class="al al-vertical al-boxes">
+
+            <div class="al" style="height:100px; background-color:#0066AA;">Vertical</div>
+            <div class="al al-boxes al-greedy-2 al-content-to-bottom al-content-alt-secondary" 
+            style="background-color:steelblue; padding:20px;">
+            
+            <div class="al al-boxes al-greedy al-text" style="background:orangered; padding:20px;">
+                I'm a horizontal-mode element, but I don't take up all the height. I only take
+                up the height that I need. This is the alternate behavior. I also respond to 
+                the <b>al-content-to-bottom</b> class.
+            </div>
+
+            <div class="al al-rows al-greedy" style="padding:20px; background-color:#033059; color:white; width:50%;">
+
+                <div class="al" style="padding:20px; background-color: olive;">Euler</div>
+                <div class="al" style="padding:20px; background-color:orangered">Cauchy</div>
+                <div class="al" style="padding:20px; background-color: olive;">Riemann</div>
+                <div class="al" style="padding:20px; background-color:orangered">Dirac</div>
+
+            </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <div class="al al-text" style="margin-top:40px;">
+        <b>Test 5:</b><br/>Secondary Dimension, horizontal-mode alternate behavior, with the <b>al-content-to-top</b>
+    </div>
+
+    <div class="al" style="height:450px;">
+        <div class="al al-vertical al-boxes">
+
+            <div class="al" style="height:100px; background-color:#0066AA;">Vertical</div>
+            <div class="al al-boxes al-greedy-2 al-content-to-top al-content-alt-secondary" 
+            style="background-color:steelblue; padding:20px;">
+            
+            <div class="al al-boxes al-greedy al-text" style="background:orangered; padding:20px;">
+                I'm a horizontal-mode element, but I don't take up all the height. I only take
+                up the height that I need. This is the alternate behavior. I also respond to 
+                the <b>al-content-to-top</b> class.
+            </div>
+
+            <div class="al al-rows al-greedy" style="padding:20px; background-color:#033059; color:white; width:50%;">
+
+                <div class="al" style="padding:20px; background-color: olive;">Euler</div>
+                <div class="al" style="padding:20px; background-color:orangered">Cauchy</div>
+                <div class="al" style="padding:20px; background-color: olive;">Riemann</div>
+                <div class="al" style="padding:20px; background-color:orangered">Dirac</div>
+
+            </div>
+
+            </div>
+
+        </div>
+
+    </div>
+  
+
+
+
+    <div class="al al-text" style="margin-top:40px;">
+        <b>Test 6</b><br/>  
+        Secondary Dimension, horizontal-mode default behavior.
+    </div>
+
+    <div class="al al-boxes al-greedy-1" style="margin-top:20px;">
+        <div class="al al-boxes al-greedy-1 al-explicit" style="background:#00CC00; padding:20px; width:400px;">
+        
+            <div class="al al-greedy" style="background:#CC00CC;">I'm a greedy box, I take up all the height</div>
+            <div class="al" style="background:#AA00AA;">I'm a box, I take up all the height</div>
+    
+        </div>
+        <div class="al al-greedy" style="background:#009900; padding:20px;">
+        euler feynman dirac cauchy hawking bohr schroedinger hamilton wheeler maxwell debroglie einstein gauss newton euler feynman dirac cauchy hawking bohr schroedinger hamilton wheeler maxwell debroglie einstein gauss newton euler feynman dirac cauchy hawking bohr schroedinger hamilton wheeler maxwell debroglie einstein gauss newton euler feynman dirac cauchy hawking bohr schroedinger hamilton wheeler maxwell debroglie einstein gauss newton euler feynman dirac cauchy hawking bohr schroedinger hamilton wheeler maxwell debroglie einstein gauss newton euler feynman dirac cauchy hawking bohr schroedinger hamilton wheeler maxwell debroglie einstein gauss newton euler feynman dirac cauchy hawking bohr schroedinger hamilton wheeler maxwell debroglie einstein gauss newton euler feynman dirac cauchy hawking bohr schroedinger hamilton wheeler maxwell debroglie einstein gauss newton 
+        </div>
+        <div class="al" style="background:#00AA00; padding:20px;">
+        Frugal
+        </div>
+    </div>
+
+    <div class="al al-text" style="margin-top:40px;">
+        <b>Test 7</b><br/>
+        Secondary Dimension, horizontal-mode alternate behavior.
+    </div>
+
+    <div class="al al-boxes al-greedy-1" style="margin-top:20px;">
+        <div class="al al-boxes al-greedy-1 al-content-alt-secondary al-explicit" 
+        style="background:#00CC00; padding:20px; width:400px;">
+            
+            <div class="al al-greedy" style="background:#CC00CC;">I'm a greedy box, I take up as much height as I need</div>
+            <div class="al" style="background:#AA00AA;">I'm a box, I take up as much height as I need</div>
+
+        </div>
+        <div class="al al-greedy" style="background:#009900; padding:20px;">
+            euler feynman dirac cauchy hawking bohr schroedinger hamilton wheeler maxwell debroglie einstein gauss newton euler feynman dirac cauchy hawking bohr schroedinger hamilton wheeler maxwell debroglie einstein gauss newton euler feynman dirac cauchy hawking bohr schroedinger hamilton wheeler maxwell debroglie einstein gauss newton euler feynman dirac cauchy hawking bohr schroedinger hamilton wheeler maxwell debroglie einstein gauss newton euler feynman dirac cauchy hawking bohr schroedinger hamilton wheeler maxwell debroglie einstein gauss newton euler feynman dirac cauchy hawking bohr schroedinger hamilton wheeler maxwell debroglie einstein gauss newton euler feynman dirac cauchy hawking bohr schroedinger hamilton wheeler maxwell debroglie einstein gauss newton euler feynman dirac cauchy hawking bohr schroedinger hamilton wheeler maxwell debroglie einstein gauss newton 
+        </div>
+        <div class="al" style="background:#00AA00; padding:20px;">
+            Frugal
+        </div>
+    </div>
+
+    <div class="al al-text" style="margin-top:40px;">
+        <b>Test 8</b><br/>
+        Secondary Dimension, horizontal-mode alternate behavior. Using <b>al-content-center-v</b>
+    </div>
+
+    <div class="al al-boxes al-greedy-1" style="margin-top:20px;">
+        <div class="al al-boxes al-greedy-1 al-content-alt-secondary al-content-center-v al-explicit" 
+        style="background:#00CC00; padding:20px; width:400px;">
+            
+            <div class="al al-greedy" style="background:#CC00CC;">I'm a greedy box, I take up as much height as I need</div>
+            <div class="al" style="background:#AA00AA;">I'm a box, I take up as much height as I need</div>
+
+        </div>
+        <div class="al al-greedy" style="background:#009900; padding:20px;">
+            euler feynman dirac cauchy hawking bohr schroedinger hamilton wheeler maxwell debroglie einstein gauss newton euler feynman dirac cauchy hawking bohr schroedinger hamilton wheeler maxwell debroglie einstein gauss newton euler feynman dirac cauchy hawking bohr schroedinger hamilton wheeler maxwell debroglie einstein gauss newton euler feynman dirac cauchy hawking bohr schroedinger hamilton wheeler maxwell debroglie einstein gauss newton euler feynman dirac cauchy hawking bohr schroedinger hamilton wheeler maxwell debroglie einstein gauss newton euler feynman dirac cauchy hawking bohr schroedinger hamilton wheeler maxwell debroglie einstein gauss newton euler feynman dirac cauchy hawking bohr schroedinger hamilton wheeler maxwell debroglie einstein gauss newton euler feynman dirac cauchy hawking bohr schroedinger hamilton wheeler maxwell debroglie einstein gauss newton 
+        </div>
+        <div class="al" style="background:#00AA00; padding:20px;">
+            Frugal
+        </div>
+    </div>
+
+     <div class="al al-text" style="margin-top:40px;">
+        <b>Test 9</b><br/>
+        Secondary Dimension, horizontal-mode alternate behavior. Using <b>al-content-to-bottom</b>
+    </div>
+
+    <div class="al al-boxes al-greedy-1" style="margin-top:20px;">
+        <div class="al al-boxes al-greedy-1 al-content-alt-secondary al-content-to-bottom al-explicit" 
+        style="background:#00CC00; padding:20px; width:400px;">
+            
+            <div class="al al-greedy" style="background:#CC00CC;">I'm a greedy box, I take up as much height as I need</div>
+            <div class="al" style="background:#AA00AA;">I'm a box, I take up as much height as I need</div>
+
+        </div>
+        <div class="al al-greedy" style="background:#009900; padding:20px;">
+            euler feynman dirac cauchy hawking bohr schroedinger hamilton wheeler maxwell debroglie einstein gauss newton euler feynman dirac cauchy hawking bohr schroedinger hamilton wheeler maxwell debroglie einstein gauss newton euler feynman dirac cauchy hawking bohr schroedinger hamilton wheeler maxwell debroglie einstein gauss newton euler feynman dirac cauchy hawking bohr schroedinger hamilton wheeler maxwell debroglie einstein gauss newton euler feynman dirac cauchy hawking bohr schroedinger hamilton wheeler maxwell debroglie einstein gauss newton euler feynman dirac cauchy hawking bohr schroedinger hamilton wheeler maxwell debroglie einstein gauss newton euler feynman dirac cauchy hawking bohr schroedinger hamilton wheeler maxwell debroglie einstein gauss newton euler feynman dirac cauchy hawking bohr schroedinger hamilton wheeler maxwell debroglie einstein gauss newton 
+        </div>
+        <div class="al" style="background:#00AA00; padding:20px;">
+            Frugal
+        </div>
+    </div>
+
+    <div class="al al-text" style="margin-top:40px;">
+        <b>Test 8:</b><br/>
+        Secondary Dimension, horizontal-mode alternate behavior, using <b>al-content-space-around</b> and <b>al-content-center-v</b>
+    </div><button disabled="disabled"></button>
+    
+    <div class="al al-boxes al-content-alt-secondary al-content-space-around al-content-center-v" style="padding:20px; background:#CC9900;">
+        <div class="al al-explicit" style="width:100px; background:#0099CC; padding:20px;">
+        100px
+        </div>
+        <div class="al al-explicit" style="width:200px; background:#0099CC; padding:20px;">
+        200px
+        </div>
+        <div class="al al-explicit" style="width:200px; background:tomato; padding:20px;">
+        Euler Cauchy Dirac Feynman DeSitter Maldacena DeBroglie Gauss Riemann Newton Einstein
+        </div>
+    </div>
+
+    <div class="al al-text" style="margin-top:40px;">
+        <b>Test 9:</b><br/>
+        Secondary Dimension, horizontal-mode alternate behavior, using <b>al-content-to-right</b> and <b>al-content-center-v</b>
+    </div><button disabled="disabled"></button>
+    
+    <div class="al al-boxes al-content-alt-secondary al-content-to-right al-content-center-v" style="padding:20px; background:#CC9900;">
+        <div class="al al-explicit" style="width:100px; background:#0099CC; padding:20px;">
+        100px
+        </div>
+        <div class="al al-explicit" style="width:200px; background:#0099CC; padding:20px;">
+        200px
+        </div>
+        <div class="al al-explicit" style="width:200px; background:tomato; padding:20px;">
+        Euler Cauchy Dirac Feynman DeSitter Maldacena DeBroglie Gauss Riemann Newton Einstein
+        </div>
+    </div>
+
+    <div class="al al-text" style="margin-top:40px;">
+        <b>Test 10:</b><br/>
+        Secondary Dimension, horizontal-mode alternate behavior, using <b>al-content-to-left</b> and <b>al-content-center-v</b>
+    </div><button disabled="disabled"></button>
+    
+    <div class="al al-boxes al-content-alt-secondary al-content-to-left al-content-center-v" style="padding:20px; background:#CC9900;">
+        <div class="al al-explicit" style="width:100px; background:#0099CC; padding:20px;">
+        100px
+        </div>
+        <div class="al al-explicit" style="width:200px; background:#0099CC; padding:20px;">
+        200px
+        </div>
+        <div class="al al-explicit" style="width:200px; background:tomato; padding:20px;">
+        Euler Cauchy Dirac Feynman DeSitter Maldacena DeBroglie Gauss Riemann Newton Einstein
+        </div>
+    </div>
+
+
+    <div class="al al-text" style="margin-top:40px;">
+        <b>Test 11:</b><br/>
+        Secondary Dimension, horizontal-mode alternate behavior, using <b>al-content-center</b>
+    </div><button disabled="disabled"></button>
+    
+    <div class="al al-boxes al-content-alt-secondary al-content-center" style="padding:20px; background:#CC9900;">
+        <div class="al al-explicit" style="width:100px; background:#0099CC; padding:20px;">
+        100px
+        </div>
+        <div class="al al-explicit" style="width:200px; background:#0099CC; padding:20px;">
+        200px
+        </div>
+        <div class="al al-explicit" style="width:200px; background:tomato; padding:20px;">
+        Euler Cauchy Dirac Feynman DeSitter Maldacena DeBroglie Gauss Riemann Newton Einstein
+        </div>
+    </div>
+
+
+
+</body>
+
+</html>

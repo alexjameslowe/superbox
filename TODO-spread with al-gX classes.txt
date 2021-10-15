@@ -1,0 +1,152 @@
+<div class="al al-rows">
+
+        <div class="al al-boxes al-boxes-gt-m al-uniform-3 al-g40">
+
+            <!-- ALEX document this. If you need to use a spread background
+            in this context, you can't use a div because of how the al-gX classes work-->
+            <!-- <span class="al-spread dots-background"></span>
+            <span class="al-spread it-things-background"></span> -->
+
+            <div class="al info-tile al-boxes al-boxes-gt-m al-vertical al-greedy-1 al-content-generate-height">
+                <div class="al tile-headers">
+                    <div class="al al-abox tile-header-animator"></div>
+                    <h3 class="al al-text tile-header">Managed IT Services</h3>
+                </div>
+                <div class="al tile-stripe"></div>
+                <div class="al al-greedy al-text tile-main">
+                    Do you want your IT systems to just work? We can elevate your IT process from the legacy world of break-fix to a stable and secure environment that is protected by the latest technologies and best practices allowing you and your team to focus on what you do best. You can also sleep soundly at night knowing your livelihood and your customer’s identities are safe and sound.
+                </div>
+                <div class="al al-boxes al-content-alt-secondary al-content-space-between al-content-to-bottom tile-footer">
+                    <div class="al footer-learn-more">
+                        Learn More
+                    </div>
+                    <div class="al al-boxes footer-socmed-icons">
+                        <i class="al fa fa-facebook-square"></i>
+                        <i class="al fa fa-twitter"></i>
+                        <i class="al fa fa-linkedin"></i>
+                    </div>
+                </div>
+            </div>
+
+            <div class="al info-tile al-boxes al-boxes-gt-m al-vertical al-greedy-1 al-content-generate-height">
+                <div class="al tile-headers">
+                    <div class="al al-abox tile-header-animator"></div>
+                    <h3 class="al al-text tile-header">Product Sales</h3>
+                </div>
+                <div class="al tile-stripe"></div>
+                <div class="al al-greedy al-text tile-main">
+                Through our technology agnostic business relationships, we can be a single source for all your IT needs. We can provide pre-sale support to post sale installation for everything from servers, storage, and networking to desktop computing, peripherals, and software. Our goal is to provide competitive pricing with world class service.
+                </div>
+                <div class="al al-boxes al-content-alt-secondary al-content-space-between al-content-to-bottom tile-footer">
+                    <div class="al footer-learn-more">
+                        Learn More
+                    </div>
+                    <div class="al al-boxes footer-socmed-icons">
+                        <i class="al fa fa-facebook-square"></i>
+                        <i class="al fa fa-twitter"></i>
+                        <i class="al fa fa-linkedin"></i>
+                    </div>
+                </div>
+            </div>
+
+            <div class="al info-tile al-boxes al-boxes-gt-m al-vertical al-greedy-1 al-content-generate-height">
+                <div class="al tile-headers">
+                    <div class="al al-abox tile-header-animator"></div>
+                    <h3 class="al al-text tile-header">Government IT Services</h3>
+                </div>
+                <div class="al tile-stripe"></div>
+                <div class="al al-greedy al-text tile-main">
+                We want to take the time to learn your process and the "Why" behind your initiatives. Armed with this insight, we leverage and customize our procurement process to do business the way you do business. Infinite Consulting Services is your trusted partner offering white glove service to make IT work for you.
+                </div>
+                <div class="al al-boxes al-content-alt-secondary al-content-space-between al-content-to-bottom tile-footer">
+                    <div class="al footer-learn-more">
+                        Learn More
+                    </div>
+                    <div class="al al-boxes footer-socmed-icons">
+                        <i class="al fa fa-facebook-square"></i>
+                        <i class="al fa fa-twitter"></i>
+                        <i class="al fa fa-linkedin"></i>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="al al-boxes al-boxes-gt-m al-uniform-3 al-g40" style="padding-top:0px; padding-bottom:120px;">
+
+        <div class="al info-tile al-boxes al-boxes-gt-m al-vertical al-greedy-1 al-content-generate-height">
+                <div class="al tile-headers">
+                    <div class="al al-abox tile-header-animator"></div>
+                    <h3 class="al al-text tile-header">Value-added Reselling</h3>
+                </div>
+                <div class="al tile-stripe"></div>
+                <div class="al al-greedy al-text tile-main">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.
+                </div>
+                <div class="al al-boxes al-content-alt-secondary al-content-space-between al-content-to-bottom tile-footer">
+                    <div class="al footer-learn-more">
+                        Learn More
+                    </div>
+                    <div class="al al-boxes footer-socmed-icons">
+                        <i class="al fa fa-facebook-square"></i>
+                        <i class="al fa fa-twitter"></i>
+                        <i class="al fa fa-linkedin"></i>
+                    </div>
+                </div>
+            </div>
+
+            <div class="al info-tile al-boxes al-boxes-gt-m al-vertical al-greedy-1 al-content-generate-height">
+                <div class="al tile-headers">
+                    <div class="al al-abox tile-header-animator"></div>
+                    <h3 class="al al-text tile-header">Et Harum Quidem</h3>
+                </div>
+                <div class="al tile-stripe"></div>
+                <div class="al al-greedy al-text tile-main">
+                Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                </div>
+                <div class="al al-boxes al-content-alt-secondary al-content-space-between al-content-to-bottom tile-footer">
+                    <div class="al footer-learn-more">
+                        Learn More
+                    </div>
+                    <div class="al al-boxes footer-socmed-icons">
+                        <i class="al fa fa-facebook-square"></i>
+                        <i class="al fa fa-twitter"></i>
+                        <i class="al fa fa-linkedin"></i>
+                    </div>
+                </div>
+            </div>
+
+            <div class="al info-tile al-boxes al-boxes-gt-m al-vertical al-greedy-1 al-content-generate-height">
+                <div class="al tile-headers">
+                    <div class="al al-abox tile-header-animator"></div>
+                    <h3 class="al al-text tile-header">Dignissimos Ducimus Qui</h3>
+                </div>
+                <div class="al tile-stripe"></div>
+                <div class="al al-greedy al-text tile-main">
+                At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident
+                </div>
+                <div class="al al-boxes al-content-alt-secondary al-content-space-between al-content-to-bottom tile-footer">
+                    <div class="al footer-learn-more">
+                        Learn More
+                    </div>
+                    <div class="al al-boxes footer-socmed-icons">
+                        <i class="al fa fa-facebook-square"></i>
+                        <i class="al fa fa-twitter"></i>
+                        <i class="al fa fa-linkedin"></i>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- <div class="al al-text" style="text-align:center; padding:20px; background:#EEEEEE;">
+            <div class="al-abox" style="width:100%; height:60px; top:-60px;">
+                <svg version="1.1" baseProfile="full" width="100%" height="100%" preserveAspectRatio="none" viewBox="0 0 400 60" xmlns="http://www.w3.org/2000/svg">
+                    <polygon fill="#EEEEEE" points="400 60 0 60 0 0 200 51.75 400 0 400 60"/>
+                </svg>
+            </div>
+            
+            <h2>How can we help your organization?</h2><br/>
+            <h4>Whether you need managed IT services, IT staffing, or just someone to answer a few questions, we've got you covered.</h4>
+        </div> -->
+
+    </div>

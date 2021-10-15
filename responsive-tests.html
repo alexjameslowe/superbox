@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="al-text/html; charset=UTF-8" />
+<link rel='stylesheet' href='alex-core-layout-flexbox-with-comments.css?v=7' type='text/css' media='all'/>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<link href="https://cdn.materialdesignicons.com/5.4.55/css/materialdesignicons.min.css" rel="stylesheet">
+</head>
+
+<body style="font-family:Verdana; line-height:1.2; font-size:0.9em; padding:30px;">
+
+<div class="al al-text" style="margin-top:40px;">
+  <b>Test 1:</b><br/>
+Responsiveness test. Sort of experimental. A set of three boxes. Less than the medium screen size they appear like rows, and greater than the medium screen size they behave like boxes. Works with IE11.
+How would this work with aligning boxes e.g. "center" and how would this work with the al-content-space* classes? Not sure. Hence, experimental.
+</div>
+<div class="al al-boxes al-boxes-gt-m al-greedy-1 al-g20" style="background:#0066CC">
+
+    <div class="al al-greedy" style="background:green;">
+      I'm the greedy element. Euler Dirac Cauchy.
+    </div>
+    <div class="al" style="background:orange;">
+      Frugal. Feynman
+    </div>
+    <div class="al" style="background:red;">
+      Frugal. DeSitter
+    </div>
+
+</div>
+
+<div class="al al-text" style="margin-top:40px;">
+  <b>Test 2:</b><br/>
+Responsiveness test. Another experiment, this time with multiple greedy elements.
+</div>
+<div class="al al-boxes al-boxes-gt-m al-greedy-3 al-g20" style="background:#0066CC; margin-bottom:50px;">
+
+    <div class="al al-greedy" style="background:green;">
+      I'm a greedy element. Euler Dirac Cauchy.
+    </div>
+    <div class="al al-greedy" style="background:orange;">
+      I'm a greedy element. Newton Gauss Hamilton.
+    </div>
+    <div class="al al-greedy" style="background:red;">
+      I'm a greedy element. Einstein Ramunajan.
+    </div>
+
+</div>
+
+
+
+<div class="al al-text" style="margin-top:40px;">
+<b>Test 3</b><br/>
+A big TODO here, make the al-vertical work responsively.
+</div>
+
+<div class="al" style="height:500px;">
+    <div class="al al-vertical al-boxes al-boxes-gt-m al-greedy-2">
+    
+        <div class="al" style="padding:20px; background-color:tomato">Dirac Cauchy Feynman Lagrange</div>
+        <div class="al al-greedy" style="padding:20px; background-color: olive;">Euler Maldacena Ramunajan (Greedy)</div>
+        <div class="al al-greedy" style="padding:20px; background-color:orangered">Newton Einstein DeSitter (Greedy)</div>
+        <div class="al al-explict" style="padding:20px; background-color:peru">Maldacena DeSitter Ramunajan (Explicit)</div>
+        <div class="al al-explict" style="padding:20px; background-color:slateblue">Maldacena DeSitter Ramunajan (Explicit)</div>
+
+    </div>
+</div>
+    
+
+
+
+<div class="al al-text" style="margin-top:40px;">
+  <b>Test 4:</b><br/>
+Responsiveness test. Another experiment, this time with uniform objects. Works in IE11.
+</div>
+<div class="al al-boxes al-boxes-gt-m al-uniform-3 al-g40" style="background:#0066CC; margin-bottom:50px;">
+
+    <div class="al" style="background:green;">
+      I'm a greedy element. Euler Dirac Cauchy.
+    </div>
+    <div class="al" style="background:orange;">
+      I'm a greedy element. Newton Gauss Hamilton.
+    </div>
+    <div class="al" style="background:red;">
+      I'm a greedy element. Einstein Ramunajan.
+    </div>
+
+</div>
+
+
+
+
+
+
+
+<div class="al" style="margin-top:40px;">
+  ???
+</div>
+
+
+
+</body>
+
+</html>
