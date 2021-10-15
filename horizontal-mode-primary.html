@@ -4,8 +4,8 @@
 
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta http-equiv="Content-Type" content="al-text/html; charset=UTF-8" />
-<link rel='stylesheet' href='alex-core-layout-flexbox-with-comments.css?v=8' type='text/css' media='all'/>
+<meta http-equiv="Content-Type" content="sb-text/html; charset=UTF-8" />
+<link rel='stylesheet' href='superbox-core-with-comments.css?v=8' type='text/css' media='all'/>
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 <link href="https://cdn.materialdesignicons.com/5.4.55/css/materialdesignicons.min.css" rel="stylesheet">
 </head>
@@ -22,169 +22,169 @@
 <body style="font-family:Verdana; line-height:1.2; font-size:0.9em; padding:30px;">
 
 
-<div class="al al-text" style="margin-top:40px;">
+<div class="sb sb-text" style="margin-top:40px;">
 <b>Test 1:</b><br/>
-Horizontal al-boxes. 2 greedy elements.
+Horizontal sb-boxes. 2 greedy elements.
 </div>
-<div class="al al-boxes al-greedy-2" style="margin-top:20px;">
-  <div class="al al-explicit" style="width:100px; background:#0099CC; padding:20px;">
+<div class="sb sb-boxes sb-greedy-2" style="margin-top:20px;">
+  <div class="sb sb-explicit" style="width:100px; background:#0099CC; padding:20px;">
     100px
   </div>
-  <div class="al al-greedy" style="background:#CC0066; padding:20px;">
+  <div class="sb sb-greedy" style="background:#CC0066; padding:20px;">
     euler feynman dirac cauchy hawking bohr schroedinger hamilton wheeler maxwell debroglie einstein gauss newton euler feynman dirac cauchy hawking bohr schroedinger hamilton wheeler maxwell debroglie einstein gauss newton 
   </div>
-  <div class="al al-greedy" style="background:#CC0066; padding:20px;">
+  <div class="sb sb-greedy" style="background:#CC0066; padding:20px;">
     euler feynman dirac cauchy hawking bohr schroedinger hamilton wheeler maxwell debroglie einstein gauss newton euler feynman dirac cauchy hawking bohr schroedinger hamilton wheeler maxwell debroglie einstein gauss newton 
   </div>
-  <div class="al al-explicit" style="width:200px; background:#0099CC; padding:20px;">
+  <div class="sb sb-explicit" style="width:200px; background:#0099CC; padding:20px;">
     200px
   </div>
-  <div class="al" style="background:#CC9900; padding:20px;">
+  <div class="sb" style="background:#CC9900; padding:20px;">
     Frugal
   </div>
 </div>
 
 
 
-<div class="al al-text" style="margin-top:40px;">
+<div class="sb sb-text" style="margin-top:40px;">
 <b>Test 2:</b><br/>
-Horizontal al-boxes. 1 greedy element, 1 frugal, and the frugal has an inner structure which is vertically-centered by virtue of the al-content-center-v class on the frugal al-box. One of the vertically-centered boxes also contains rows just to show the flexibility of that. And also the height is generated with a bunch of rows in the center greedy box.
+Horizontal sb-boxes. 1 greedy element, 1 frugal, and the frugal has an inner structure which is vertically-centered by virtue of the sb-content-center-v class on the frugal sb-box. One of the vertically-centered boxes also contains rows just to show the flexibility of that. And also the height is generated with a bunch of rows in the center greedy box.
 </div>
-<div class="al al-boxes al-greedy-1" style="margin-top:20px;">
-  <div class="al al-boxes al-content-center-v al-greedy-2 al-explicit" style="background:#00CC00; padding:20px; width:400px;">
+<div class="sb sb-boxes sb-greedy-1" style="margin-top:20px;">
+  <div class="sb sb-boxes sb-content-center-v sb-greedy-2 sb-explicit" style="background:#00CC00; padding:20px; width:400px;">
     
-      <div class="al al-greedy" style="background:#CC00CC;">Testing 1 2 3 Testing 1 2 3 Testing 1 2 3 Testing 1 2 3 Testing 1 2 3</div>
-      <div class="al al-rows al-greedy" style="background:#AA00AA;">
-          <div class="al" style="background:#0099CC; padding:5px;">Euler</div>
-          <div class="al" style="background:#00CC99; padding:5px;">Cauchy</div>
-          <div class="al" style="background:#99CC00; padding:5px;">Riemann</div>
+      <div class="sb sb-greedy" style="background:#CC00CC;">Testing 1 2 3 Testing 1 2 3 Testing 1 2 3 Testing 1 2 3 Testing 1 2 3</div>
+      <div class="sb sb-rows sb-greedy" style="background:#AA00AA;">
+          <div class="sb" style="background:#0099CC; padding:5px;">Euler</div>
+          <div class="sb" style="background:#00CC99; padding:5px;">Cauchy</div>
+          <div class="sb" style="background:#99CC00; padding:5px;">Riemann</div>
       </div>
 
   </div>
 
-  <div class="al al-rows al-greedy" style="background:#AA00AA; padding:20px;">
-      <div class="al" style="background:#0099CC; padding:5px;">euler feynman dirac cauchy hawking bohr schroedinger hamilton euler feynman dirac cauchy hawking bohr schroedinger hamilton euler feynman dirac cauchy hawking bohr schroedinger hamilton</div>
-      <div class="al" style="background:#00CC99; padding:5px;">euler feynman dirac cauchy hawking bohr schroedinger hamilton euler feynman dirac cauchy hawking bohr schroedinger hamilton euler feynman dirac cauchy hawking bohr schroedinger hamilton euler feynman dirac cauchy hawking bohr schroedinger hamilton euler feynman dirac cauchy hawking bohr schroedinger hamilton euler feynman dirac cauchy hawking bohr schroedinger hamilton</div>
-      <div class="al" style="background:#99CC00; padding:5px;">euler feynman dirac cauchy hawking bohr schroedinger hamilton euler feynman dirac cauchy hawking bohr schroedinger hamilton euler feynman dirac cauchy hawking bohr schroedinger hamilton euler feynman dirac cauchy hawking bohr schroedinger hamilton euler feynman dirac cauchy hawking bohr schroedinger hamilton euler feynman dirac cauchy hawking bohr schroedinger hamilton euler feynman dirac cauchy hawking bohr schroedinger hamilton</div>
+  <div class="sb sb-rows sb-greedy" style="background:#AA00AA; padding:20px;">
+      <div class="sb" style="background:#0099CC; padding:5px;">euler feynman dirac cauchy hawking bohr schroedinger hamilton euler feynman dirac cauchy hawking bohr schroedinger hamilton euler feynman dirac cauchy hawking bohr schroedinger hamilton</div>
+      <div class="sb" style="background:#00CC99; padding:5px;">euler feynman dirac cauchy hawking bohr schroedinger hamilton euler feynman dirac cauchy hawking bohr schroedinger hamilton euler feynman dirac cauchy hawking bohr schroedinger hamilton euler feynman dirac cauchy hawking bohr schroedinger hamilton euler feynman dirac cauchy hawking bohr schroedinger hamilton euler feynman dirac cauchy hawking bohr schroedinger hamilton</div>
+      <div class="sb" style="background:#99CC00; padding:5px;">euler feynman dirac cauchy hawking bohr schroedinger hamilton euler feynman dirac cauchy hawking bohr schroedinger hamilton euler feynman dirac cauchy hawking bohr schroedinger hamilton euler feynman dirac cauchy hawking bohr schroedinger hamilton euler feynman dirac cauchy hawking bohr schroedinger hamilton euler feynman dirac cauchy hawking bohr schroedinger hamilton euler feynman dirac cauchy hawking bohr schroedinger hamilton</div>
   </div>
 
-  <div class="al" style="background:#00AA00; padding:20px;">
+  <div class="sb" style="background:#00AA00; padding:20px;">
     Frugal
   </div>
 </div>
 
 
 
-<div class="al al-text" style="margin-top:40px;">
+<div class="sb sb-text" style="margin-top:40px;">
 <b>Test 3:</b><br/>
-Same as 2, only this time it's the greedy al-box that has the al-content-center-v class and the contents inside.
+Same as 2, only this time it's the greedy sb-box that has the sb-content-center-v class and the contents inside.
 </div>
-<div class="al al-boxes al-greedy-1" style="margin-top:20px;">
-  <div class="al al-explicit" style="background:#00CC00; padding:20px; width:400px;">
+<div class="sb sb-boxes sb-greedy-1" style="margin-top:20px;">
+  <div class="sb sb-explicit" style="background:#00CC00; padding:20px; width:400px;">
 
         euler feynman dirac cauchy hawking bohr schroedinger hamilton wheeler maxwell debroglie einstein gauss newton euler feynman dirac cauchy hawking bohr schroedinger hamilton wheeler maxwell debroglie einstein gauss newton euler feynman dirac cauchy hawking bohr schroedinger hamilton wheeler maxwell debroglie einstein gauss newton euler feynman dirac cauchy hawking bohr schroedinger hamilton wheeler maxwell debroglie einstein gauss newton euler feynman dirac cauchy hawking bohr schroedinger hamilton wheeler maxwell debroglie einstein gauss newton euler feynman dirac cauchy hawking bohr schroedinger hamilton wheeler maxwell debroglie einstein gauss newton euler feynman dirac cauchy hawking bohr schroedinger hamilton wheeler maxwell debroglie einstein gauss newton euler feynman dirac cauchy hawking bohr schroedinger hamilton wheeler maxwell debroglie einstein gauss newton 
     
   </div>
-  <div class="al al-boxes al-greedy al-greedy-2 al-content-center-v" style="background:#009900; padding:20px;">
+  <div class="sb sb-boxes sb-greedy sb-greedy-2 sb-content-center-v" style="background:#009900; padding:20px;">
 
-      <div class="al al-greedy" style="background:#CC00CC;">Testing 1 2 3 Testing 1 2 3 Testing 1 2 3 Testing 1 2 3 Testing 1 2 3</div>
-      <div class="al al-greedy" style="background:#AA00AA;">Testing A B C Testing A B C Testing A B C Testing A B C Testing A B C</div>
+      <div class="sb sb-greedy" style="background:#CC00CC;">Testing 1 2 3 Testing 1 2 3 Testing 1 2 3 Testing 1 2 3 Testing 1 2 3</div>
+      <div class="sb sb-greedy" style="background:#AA00AA;">Testing A B C Testing A B C Testing A B C Testing A B C Testing A B C</div>
     
   </div>
-  <div class="al" style="background:#00AA00; padding:20px;">
+  <div class="sb" style="background:#00AA00; padding:20px;">
     Frugal
   </div>
 </div>
 
 
-<div class="al al-text" style="margin-top:40px;">
+<div class="sb sb-text" style="margin-top:40px;">
 <b>Test 4:</b><br/>
-Horizontal al-boxes. 2 greedy elements.
+Horizontal sb-boxes. 2 greedy elements.
 </div>
-<div class="al al-boxes al-greedy-2" style="margin-top:20px;">
-  <div class="al al-explicit" style="width:100px; background:#0099CC; padding:20px;">
+<div class="sb sb-boxes sb-greedy-2" style="margin-top:20px;">
+  <div class="sb sb-explicit" style="width:100px; background:#0099CC; padding:20px;">
     100px
   </div>
-  <div class="al al-greedy" style="background:#CC0066; padding:20px;">
+  <div class="sb sb-greedy" style="background:#CC0066; padding:20px;">
     euler feynman dirac cauchy hawking bohr schroedinger hamilton wheeler maxwell debroglie einstein gauss newton euler feynman dirac cauchy hawking bohr schroedinger hamilton wheeler maxwell debroglie einstein gauss newton 
   </div>
-  <div class="al al-greedy" style="background:#CC0066; padding:20px;">
+  <div class="sb sb-greedy" style="background:#CC0066; padding:20px;">
     euler feynman dirac cauchy hawking bohr schroedinger hamilton wheeler maxwell debroglie einstein gauss newton euler feynman dirac cauchy hawking bohr schroedinger hamilton wheeler maxwell debroglie einstein gauss newton 
   </div>
-  <div class="al al-explicit" style="width:200px; background:#0099CC; padding:20px;">
+  <div class="sb sb-explicit" style="width:200px; background:#0099CC; padding:20px;">
     200px
   </div>
-  <div class="al" style="background:#CC9900; padding:20px;">
+  <div class="sb" style="background:#CC9900; padding:20px;">
     Frugal
   </div>
 </div>
 
 
-<div class="al al-text" style="margin-top:40px;">
+<div class="sb sb-text" style="margin-top:40px;">
   <b>Test 5:</b><br/>
-  3 frugal elements Using the <b>al-content-space-around</b>
+  3 frugal elements Using the <b>sb-content-space-around</b>
 </div><button disabled="disabled"></button>
 
-<div class="al al-boxes al-content-space-around" style="padding:20px; background:#CC9900;">
-  <div class="al al-explicit" style="width:100px; background:#0099CC; padding:20px;">
+<div class="sb sb-boxes sb-content-space-around" style="padding:20px; background:#CC9900;">
+  <div class="sb sb-explicit" style="width:100px; background:#0099CC; padding:20px;">
   100px
   </div>
-  <div class="al al-explicit" style="width:200px; background:#0099CC; padding:20px;">
+  <div class="sb sb-explicit" style="width:200px; background:#0099CC; padding:20px;">
   200px
   </div>
-  <div class="al al-explicit" style="width:200px; background:tomato; padding:20px;">
+  <div class="sb sb-explicit" style="width:200px; background:tomato; padding:20px;">
   Euler Cauchy Dirac Feynman DeSitter Maldacena DeBroglie Gauss Riemann Newton Einstein
   </div>
 </div>
 
-<div class="al al-text" style="margin-top:40px;">
+<div class="sb sb-text" style="margin-top:40px;">
   <b>Test 6:</b><br/>
-  3 frugal elements Using the <b>al-content-to-right</b>
+  3 frugal elements Using the <b>sb-content-to-right</b>
 </div><button disabled="disabled"></button>
 
-<div class="al al-boxes al-content-to-right" style="padding:20px; background:#CC9900;">
-  <div class="al al-explicit" style="width:100px; background:#0099CC; padding:20px;">
+<div class="sb sb-boxes sb-content-to-right" style="padding:20px; background:#CC9900;">
+  <div class="sb sb-explicit" style="width:100px; background:#0099CC; padding:20px;">
   100px
   </div>
-  <div class="al al-explicit" style="width:200px; background:#0099CC; padding:20px;">
+  <div class="sb sb-explicit" style="width:200px; background:#0099CC; padding:20px;">
   200px
   </div>
-  <div class="al al-explicit" style="width:200px; background:tomato; padding:20px;">
+  <div class="sb sb-explicit" style="width:200px; background:tomato; padding:20px;">
   Euler Cauchy Dirac Feynman DeSitter Maldacena DeBroglie Gauss Riemann Newton Einstein
   </div>
 </div>
 
-<div class="al al-text" style="margin-top:40px;">
+<div class="sb sb-text" style="margin-top:40px;">
   <b>Test 7:</b><br/>
-  3 frugal elements Using the <b>al-content-to-left</b>
+  3 frugal elements Using the <b>sb-content-to-left</b>
 </div><button disabled="disabled"></button>
 
-<div class="al al-boxes al-content-to-left" style="padding:20px; background:#CC9900;">
-  <div class="al al-explicit" style="width:100px; background:#0099CC; padding:20px;">
+<div class="sb sb-boxes sb-content-to-left" style="padding:20px; background:#CC9900;">
+  <div class="sb sb-explicit" style="width:100px; background:#0099CC; padding:20px;">
   100px
   </div>
-  <div class="al al-explicit" style="width:200px; background:#0099CC; padding:20px;">
+  <div class="sb sb-explicit" style="width:200px; background:#0099CC; padding:20px;">
   200px
   </div>
-  <div class="al al-explicit" style="width:200px; background:tomato; padding:20px;">
+  <div class="sb sb-explicit" style="width:200px; background:tomato; padding:20px;">
   Euler Cauchy Dirac Feynman DeSitter Maldacena DeBroglie Gauss Riemann Newton Einstein
   </div>
 </div>
 
 
-<div class="al al-text" style="margin-top:40px;">
+<div class="sb sb-text" style="margin-top:40px;">
   <b>Test 8:</b><br/>
-  3 frugal elements Using the <b>al-content-center-h</b>
+  3 frugal elements Using the <b>sb-content-center-h</b>
 </div><button disabled="disabled"></button>
 
-<div class="al al-boxes al-content-center-h" style="padding:20px; background:#CC9900;">
-  <div class="al al-explicit" style="width:100px; background:#0099CC; padding:20px;">
+<div class="sb sb-boxes sb-content-center-h" style="padding:20px; background:#CC9900;">
+  <div class="sb sb-explicit" style="width:100px; background:#0099CC; padding:20px;">
   100px
   </div>
-  <div class="al al-explicit" style="width:200px; background:#0099CC; padding:20px;">
+  <div class="sb sb-explicit" style="width:200px; background:#0099CC; padding:20px;">
   200px
   </div>
-  <div class="al al-explicit" style="width:200px; background:tomato; padding:20px;">
+  <div class="sb sb-explicit" style="width:200px; background:tomato; padding:20px;">
   Euler Cauchy Dirac Feynman DeSitter Maldacena DeBroglie Gauss Riemann Newton Einstein
   </div>
 </div>

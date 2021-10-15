@@ -4,8 +4,8 @@
 
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta http-equiv="Content-Type" content="al-text/html; charset=UTF-8" />
-<link rel='stylesheet' href='alex-core-layout-flexbox-with-comments.css?v=9' type='text/css' media='all'/>
+<meta http-equiv="Content-Type" content="sb-text/html; charset=UTF-8" />
+<link rel='stylesheet' href='superbox-core-with-comments.css?v=9' type='text/css' media='all'/>
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 <link href="https://cdn.materialdesignicons.com/5.4.55/css/materialdesignicons.min.css" rel="stylesheet">
 </head>
@@ -41,112 +41,112 @@
 
 <body style="font-family:Verdana; line-height:1.2; font-size:0.9em; padding:30px;">
 
-    <div class="al al-text" style="margin-bottom:40px;">
+    <div class="sb sb-text" style="margin-bottom:40px;">
         These examples show how vertical-mode elements deal with height. The rules for greediness are basically 
         the same as the ones for horizontal-mode elements. The only differerce is that we have the 
-        <b>al-content-strict-height</b> class.
+        <b>sb-content-strict-height</b> class.
       </div>
 
-    <div class="al al-text" style="margin-top:40px;">
+    <div class="sb sb-text" style="margin-top:40px;">
     <b>Test 1</b><br/>
         Basic example showing vertical-mode. We have two greedy elements, and the rest are frugal. Frugal elements with explicit 
         heights get the al-explict class, just like in horizontal-mode
     </div>
 
-    <div class="al" style="height:400px;">
-        <div class="al al-vertical al-boxes al-greedy-2">
+    <div class="sb" style="height:400px;">
+        <div class="sb sb-vertical sb-boxes sb-greedy-2">
         
-            <div class="al" style="padding:20px; background-color:tomato">
+            <div class="sb" style="padding:20px; background-color:tomato">
                 Dirac Cauchy Feynman Lagrange
             </div>
-            <div class="al al-greedy" style="padding:20px; background-color: olive;">
+            <div class="sb sb-greedy" style="padding:20px; background-color: olive;">
                 Euler Maldacena Ramunajan (Greedy)
             </div>
-            <div class="al al-greedy" style="padding:20px; background-color:orangered">
+            <div class="sb sb-greedy" style="padding:20px; background-color:orangered">
                 Newton Einstein DeSitter (Greedy)
             </div>
-            <div class="al al-explict" style="height:100px; padding:20px; background-color:peru">
+            <div class="sb al-explict" style="height:100px; padding:20px; background-color:peru">
                 Maldacena DeSitter Ramunajan (Explicit)
             </div>
-            <div class="al al-explict" style="height:100px; padding:20px; background-color:slateblue">Maldacena DeSitter Ramunajan (Explicit)</div>
+            <div class="sb al-explict" style="height:100px; padding:20px; background-color:slateblue">Maldacena DeSitter Ramunajan (Explicit)</div>
         </div>
         
     </div>
     
     
 
-    <div class="al al-text" style="margin-top:40px;">
+    <div class="sb sb-text" style="margin-top:40px;">
     <b>Test 2</b><br/>
         We have a horizontal-mode container on the left and inside that container, boxes switch from horizontal to vertical conservation, and the same rules of greediness apply. 
-        Note that just like the horizontal-mode examples, al elements that have an explicit height get the al-explicit class.
-        Note that the gold greedy box with the long content gets a scrolling bar, and that's because we're using al-content-strict-height on that element.
+        Note that just like the horizontal-mode examples, al elements that have an explicit height get the sb-explicit class.
+        Note that the gold greedy box with the long content gets a scrolling bar, and that's because we're using sb-content-strict-height on that element.
     </div>
 
-    <div class="al al-boxes al-greedy-1" style="margin-top:20px;">
-        <div class="al al-explicit" style="background:#00CC00; padding:20px; width:400px;">
+    <div class="sb sb-boxes sb-greedy-1" style="margin-top:20px;">
+        <div class="sb sb-explicit" style="background:#00CC00; padding:20px; width:400px;">
         
-            <div class="al al-vertical al-content-strict-height al-content-use-strict-height al-boxes al-greedy-2" style="background:#CC00CC;">
+            <div class="sb sb-vertical sb-content-strict-height sb-content-use-strict-height sb-boxes sb-greedy-2" style="background:#CC00CC;">
             
-                <div class="al" style="background:tomato;">
+                <div class="sb" style="background:tomato;">
                     1 header: sized to content
                     <br/>(but is it really?)
                 </div>
-                <div class="al al-greedy" style="background:gold;">
+                <div class="sb sb-greedy" style="background:gold;">
                     I have a scrolling bar!<br/>
                     main content: fills remaining space main content: fills remaining space main content: fills remaining space main content: fills remaining space main content: fills remaining space main content: fills remaining space main content: fills remaining space main content: fills remaining space main content: fills remaining space main content: fills remaining space main content: fills remaining space main content: fills remaining space main content: fills remaining space main content: fills remaining space main content: fills remaining space main content: fills remaining space main content: fills remaining space main content: fills remaining space main content: fills remaining space main content: fills remaining space main content: fills remaining space main content: fills remaining space main content: fills remaining space main content: fills remaining space main content: fills remaining space main content: fills remaining space main content: fills remaining space main content: fills remaining space main content: fills remaining space main content: fills remaining space main content: fills remaining space main content: fills remaining space main content: fills remaining space
                 </div>
-                <div class="al al-greedy" style="background:orange; min-height:100px;">
+                <div class="sb sb-greedy" style="background:orange; min-height:100px;">
                     main content: fills remaining space main content:
                 </div>
-                <div class="al al-explicit" style="background:lightgreen; height:50px;">
+                <div class="sb sb-explicit" style="background:lightgreen; height:50px;">
                     footer: fixed height 50px
                 </div>
     
             </div>
         
         </div>
-        <div class="al al-greedy" style="background:#009900; padding:20px;">
+        <div class="sb sb-greedy" style="background:#009900; padding:20px;">
         euler feynman dirac cauchy hawking bohr schroedinger hamilton wheeler maxwell debroglie einstein gauss newton euler feynman dirac cauchy hawking bohr schroedinger hamilton wheeler maxwell debroglie einstein gauss newton euler feynman dirac cauchy hawking bohr schroedinger hamilton wheeler maxwell debroglie einstein gauss newton euler feynman dirac cauchy hawking bohr schroedinger hamilton wheeler maxwell debroglie einstein gauss newton euler feynman dirac cauchy hawking bohr schroedinger hamilton wheeler maxwell debroglie einstein gauss newton euler feynman dirac cauchy hawking bohr schroedinger hamilton wheeler maxwell debroglie einstein gauss newton euler feynman dirac cauchy hawking bohr schroedinger hamilton wheeler maxwell debroglie einstein gauss newton euler feynman dirac cauchy hawking bohr schroedinger hamilton wheeler maxwell debroglie einstein gauss newton euler feynman dirac cauchy hawking bohr schroedinger hamilton wheeler maxwell debroglie einstein gauss newton euler feynman dirac cauchy hawking bohr schroedinger hamilton wheeler maxwell debroglie einstein gauss newton euler feynman dirac cauchy hawking bohr schroedinger hamilton wheeler maxwell debroglie einstein gauss newton euler feynman dirac cauchy hawking bohr schroedinger hamilton wheeler maxwell debroglie einstein gauss newton euler feynman dirac cauchy hawking bohr schroedinger hamilton wheeler maxwell debroglie einstein gauss newton euler feynman dirac cauchy hawking bohr schroedinger hamilton wheeler maxwell debroglie einstein gauss newton euler feynman dirac cauchy hawking bohr schroedinger hamilton wheeler maxwell debroglie einstein gauss newton euler feynman dirac cauchy hawking bohr schroedinger hamilton wheeler maxwell debroglie einstein gauss newton 
         </div>
-        <div class="al" style="background:#00AA00; padding:20px;">
+        <div class="sb" style="background:#00AA00; padding:20px;">
         Frugal
         </div>
     </div>
         
         
         
-    <div class="al al-text" style="margin-top:40px;">
+    <div class="sb sb-text" style="margin-top:40px;">
     <b>Test 3:</b><br/>
-    Same as 2, only this time we're doing it without the al-content-strict-height on the al-vertical. You'll note that the al-vertical now actually generates height instead of just consuming it, and therefore the gold greedy box with the long content doesn't have a scrollbar. This is an asymmetry that doesn't have any counterpart in horizontal-conservation situations, but comes in handy during vertical-conservation. You'll also notice that the orange greedy-element accepts min-height.
+    Same as 2, only this time we're doing it without the sb-content-strict-height on the sb-vertical. You'll note that the sb-vertical now actually generates height instead of just consuming it, and therefore the gold greedy box with the long content doesn't have a scrollbar. This is an asymmetry that doesn't have any counterpart in horizontal-conservation situations, but comes in handy during vertical-conservation. You'll also notice that the orange greedy-element accepts min-height.
     </div>
 
-    <div class="al al-boxes al-greedy-1" style="margin-top:20px;">
-        <div class="al al-explicit" style="background:#00CC00; padding:20px; width:400px;">
+    <div class="sb sb-boxes sb-greedy-1" style="margin-top:20px;">
+        <div class="sb sb-explicit" style="background:#00CC00; padding:20px; width:400px;">
         
-            <div class="al al-vertical al-boxes al-greedy-2" style="background:#CC00CC;">
+            <div class="sb sb-vertical sb-boxes sb-greedy-2" style="background:#CC00CC;">
             
-            <div class="al" style="background:tomato;">
+            <div class="sb" style="background:tomato;">
                 1 header: sized to content
                 <br/>(but is it really?)
             </div>
-            <div class="al al-greedy" style="background:gold;">
+            <div class="sb sb-greedy" style="background:gold;">
                 I have a scrolling bar!<br/>
                 main content: fills remaining space main content: fills remaining space main content: fills remaining space main content: fills remaining space main content: fills remaining space main content: fills remaining space main content: fills remaining space main content: fills remaining space main content: fills remaining space main content: fills remaining space main content: fills remaining space main content: fills remaining space main content: fills remaining space main content: fills remaining space main content: fills remaining space main content: fills remaining space main content: fills remaining space main content: fills remaining space main content: fills remaining space main content: fills remaining space main content: fills remaining space main content: fills remaining space main content: fills remaining space main content: fills remaining space main content: fills remaining space main content: fills remaining space main content: fills remaining space main content: fills remaining space main content: fills remaining space main content: fills remaining space main content: fills remaining space main content: fills remaining space main content: fills remaining space
             </div>
-            <div class="al al-greedy" style="background:orange; min-height:200px;">
+            <div class="sb sb-greedy" style="background:orange; min-height:200px;">
                 main content: fills remaining space main content.
             </div>
-            <div class="al al-explicit" style="background:lightgreen; height:50px;">
+            <div class="sb sb-explicit" style="background:lightgreen; height:50px;">
                 footer: fixed height 50px
             </div>
     
             </div>
         
         </div>
-        <div class="al al-greedy" style="background:#009900; padding:20px;">
+        <div class="sb sb-greedy" style="background:#009900; padding:20px;">
         euler feynman dirac cauchy hawking bohr schroedinger hamilton wheeler maxwell debroglie einstein gauss newton euler feynman dirac cauchy hawking bohr schroedinger hamilton wheeler maxwell debroglie einstein gauss newton euler feynman dirac cauchy hawking bohr schroedinger hamilton wheeler maxwell debroglie einstein gauss newton euler feynman dirac cauchy hawking bohr schroedinger hamilton wheeler maxwell debroglie einstein gauss newton euler feynman dirac cauchy hawking bohr schroedinger hamilton wheeler maxwell debroglie einstein gauss newton euler feynman dirac cauchy hawking bohr schroedinger hamilton wheeler maxwell debroglie einstein gauss newton euler feynman dirac cauchy hawking bohr schroedinger hamilton wheeler maxwell debroglie einstein gauss newton euler feynman dirac cauchy hawking bohr schroedinger hamilton wheeler maxwell debroglie einstein gauss newton euler feynman dirac cauchy hawking bohr schroedinger hamilton wheeler maxwell debroglie einstein gauss newton euler feynman dirac cauchy hawking bohr schroedinger hamilton wheeler maxwell debroglie einstein gauss newton euler feynman dirac cauchy hawking bohr schroedinger hamilton wheeler maxwell debroglie einstein gauss newton euler feynman dirac cauchy hawking bohr schroedinger hamilton wheeler maxwell debroglie einstein gauss newton euler feynman dirac cauchy hawking bohr schroedinger hamilton wheeler maxwell debroglie einstein gauss newton euler feynman dirac cauchy hawking bohr schroedinger hamilton wheeler maxwell debroglie einstein gauss newton euler feynman dirac cauchy hawking bohr schroedinger hamilton wheeler maxwell debroglie einstein gauss newton euler feynman dirac cauchy hawking bohr schroedinger hamilton wheeler maxwell debroglie einstein gauss newton 
         </div>
-        <div class="al" style="background:#00AA00; padding:20px;">
+        <div class="sb" style="background:#00AA00; padding:20px;">
         Frugal
         </div>
     </div>
@@ -154,133 +154,133 @@
 
         
         
-    <div class="al al-text" style="margin-top:40px;">
+    <div class="sb sb-text" style="margin-top:40px;">
     <b>Test 4</b><br/>
-    We're using the al-content-space-evenly to space some rows. When its used with al-vertical
+    We're using the sb-content-space-evenly to space some rows. When its used with sb-vertical
     it will space the content evenly vertically.
     </div>
 
-    <div class="al al-boxes al-greedy-1" style="margin-top:20px;">
-        <div class="al al-explicit" style="background:#00CC00; padding:20px; width:400px;">
+    <div class="sb sb-boxes sb-greedy-1" style="margin-top:20px;">
+        <div class="sb sb-explicit" style="background:#00CC00; padding:20px; width:400px;">
         
-            <div class="al al-vertical al-boxes al-content-space-evenly" style="background:#CC00CC;">
-            <div class="al" style="padding:10px; background:#0066CC">ABC</div>
-            <div class="al" style="padding:10px; background:#00CC66">123</div>
+            <div class="sb sb-vertical sb-boxes sb-content-space-evenly" style="background:#CC00CC;">
+            <div class="sb" style="padding:10px; background:#0066CC">ABC</div>
+            <div class="sb" style="padding:10px; background:#00CC66">123</div>
             </div>
         
         </div>
-        <div class="al al-greedy" style="background:#009900; padding:20px;">
+        <div class="sb sb-greedy" style="background:#009900; padding:20px;">
         euler feynman dirac cauchy hawking bohr schroedinger hamilton wheeler maxwell debroglie einstein gauss newton euler feynman dirac cauchy hawking bohr schroedinger hamilton wheeler maxwell debroglie einstein gauss newton euler feynman dirac cauchy hawking bohr schroedinger hamilton wheeler maxwell debroglie einstein gauss newton euler feynman dirac cauchy hawking bohr schroedinger hamilton wheeler maxwell debroglie einstein gauss newton euler feynman dirac cauchy hawking bohr schroedinger hamilton wheeler maxwell debroglie einstein gauss newton euler feynman dirac cauchy hawking bohr schroedinger hamilton wheeler maxwell debroglie einstein gauss newton euler feynman dirac cauchy hawking bohr schroedinger hamilton wheeler maxwell debroglie einstein gauss newton euler feynman dirac cauchy hawking bohr schroedinger hamilton wheeler maxwell debroglie einstein gauss newton euler feynman dirac cauchy hawking bohr schroedinger hamilton wheeler maxwell debroglie einstein gauss newton euler feynman dirac cauchy hawking bohr schroedinger hamilton wheeler maxwell debroglie einstein gauss newton euler feynman dirac cauchy hawking bohr schroedinger hamilton wheeler maxwell debroglie einstein gauss newton euler feynman dirac cauchy hawking bohr schroedinger hamilton wheeler maxwell debroglie einstein gauss newton euler feynman dirac cauchy hawking bohr schroedinger hamilton wheeler maxwell debroglie einstein gauss newton euler feynman dirac cauchy hawking bohr schroedinger hamilton wheeler maxwell debroglie einstein gauss newton euler feynman dirac cauchy hawking bohr schroedinger hamilton wheeler maxwell debroglie einstein gauss newton euler feynman dirac cauchy hawking bohr schroedinger hamilton wheeler maxwell debroglie einstein gauss newton 
         </div>
-        <div class="al" style="background:#00AA00; padding:20px;">
+        <div class="sb" style="background:#00AA00; padding:20px;">
         Frugal
         </div>
     </div>
     
 
-    <div class="al al-text" style="margin-top:40px;">
+    <div class="sb sb-text" style="margin-top:40px;">
         <b>Test 5</b><br/>
-        Same as 4, but this one uses the <b>al-content-space-around</b> class
+        Same as 4, but this one uses the <b>sb-content-space-around</b> class
     </div>
     
-    <div class="al al-boxes al-greedy-1" style="margin-top:20px;">
-        <div class="al al-explicit" style="background:#00CC00; padding:20px; width:400px;">
+    <div class="sb sb-boxes sb-greedy-1" style="margin-top:20px;">
+        <div class="sb sb-explicit" style="background:#00CC00; padding:20px; width:400px;">
         
-            <div class="al al-vertical al-boxes al-content-space-around" style="background:#CC00CC;">
-            <div class="al" style="padding:10px; background:#0066CC">ABC</div>
-            <div class="al" style="padding:10px; background:#00CC66">123</div>
+            <div class="sb sb-vertical sb-boxes sb-content-space-around" style="background:#CC00CC;">
+            <div class="sb" style="padding:10px; background:#0066CC">ABC</div>
+            <div class="sb" style="padding:10px; background:#00CC66">123</div>
             </div>
         
         </div>
-        <div class="al al-greedy" style="background:#009900; padding:20px;">
+        <div class="sb sb-greedy" style="background:#009900; padding:20px;">
         euler feynman dirac cauchy hawking bohr schroedinger hamilton wheeler maxwell debroglie einstein gauss newton euler feynman dirac cauchy hawking bohr schroedinger hamilton wheeler maxwell debroglie einstein gauss newton euler feynman dirac cauchy hawking bohr schroedinger hamilton wheeler maxwell debroglie einstein gauss newton euler feynman dirac cauchy hawking bohr schroedinger hamilton wheeler maxwell debroglie einstein gauss newton euler feynman dirac cauchy hawking bohr schroedinger hamilton wheeler maxwell debroglie einstein gauss newton euler feynman dirac cauchy hawking bohr schroedinger hamilton wheeler maxwell debroglie einstein gauss newton euler feynman dirac cauchy hawking bohr schroedinger hamilton wheeler maxwell debroglie einstein gauss newton euler feynman dirac cauchy hawking bohr schroedinger hamilton wheeler maxwell debroglie einstein gauss newton euler feynman dirac cauchy hawking bohr schroedinger hamilton wheeler maxwell debroglie einstein gauss newton euler feynman dirac cauchy hawking bohr schroedinger hamilton wheeler maxwell debroglie einstein gauss newton euler feynman dirac cauchy hawking bohr schroedinger hamilton wheeler maxwell debroglie einstein gauss newton euler feynman dirac cauchy hawking bohr schroedinger hamilton wheeler maxwell debroglie einstein gauss newton euler feynman dirac cauchy hawking bohr schroedinger hamilton wheeler maxwell debroglie einstein gauss newton euler feynman dirac cauchy hawking bohr schroedinger hamilton wheeler maxwell debroglie einstein gauss newton euler feynman dirac cauchy hawking bohr schroedinger hamilton wheeler maxwell debroglie einstein gauss newton euler feynman dirac cauchy hawking bohr schroedinger hamilton wheeler maxwell debroglie einstein gauss newton 
         </div>
-        <div class="al" style="background:#00AA00; padding:20px;">
+        <div class="sb" style="background:#00AA00; padding:20px;">
         Frugal
         </div>
     </div>
         
-    <div class="al al-text" style="margin-top:40px;">
+    <div class="sb sb-text" style="margin-top:40px;">
         <b>Test 6</b><br/>
-        Same as 4, but this one uses the <b>al-content-space-between</b> class
+        Same as 4, but this one uses the <b>sb-content-space-between</b> class
     </div>
     
-    <div class="al al-boxes al-greedy-1" style="margin-top:20px;">
-        <div class="al al-explicit" style="background:#00CC00; padding:20px; width:400px;">
+    <div class="sb sb-boxes sb-greedy-1" style="margin-top:20px;">
+        <div class="sb sb-explicit" style="background:#00CC00; padding:20px; width:400px;">
         
-            <div class="al al-vertical al-boxes al-content-space-between" style="background:#CC00CC;">
-            <div class="al" style="padding:10px; background:#0066CC">ABC</div>
-            <div class="al" style="padding:10px; background:#00CC66">123</div>
+            <div class="sb sb-vertical sb-boxes sb-content-space-between" style="background:#CC00CC;">
+            <div class="sb" style="padding:10px; background:#0066CC">ABC</div>
+            <div class="sb" style="padding:10px; background:#00CC66">123</div>
             </div>
         
         </div>
-        <div class="al al-greedy" style="background:#009900; padding:20px;">
+        <div class="sb sb-greedy" style="background:#009900; padding:20px;">
         euler feynman dirac cauchy hawking bohr schroedinger hamilton wheeler maxwell debroglie einstein gauss newton euler feynman dirac cauchy hawking bohr schroedinger hamilton wheeler maxwell debroglie einstein gauss newton euler feynman dirac cauchy hawking bohr schroedinger hamilton wheeler maxwell debroglie einstein gauss newton euler feynman dirac cauchy hawking bohr schroedinger hamilton wheeler maxwell debroglie einstein gauss newton euler feynman dirac cauchy hawking bohr schroedinger hamilton wheeler maxwell debroglie einstein gauss newton euler feynman dirac cauchy hawking bohr schroedinger hamilton wheeler maxwell debroglie einstein gauss newton euler feynman dirac cauchy hawking bohr schroedinger hamilton wheeler maxwell debroglie einstein gauss newton euler feynman dirac cauchy hawking bohr schroedinger hamilton wheeler maxwell debroglie einstein gauss newton euler feynman dirac cauchy hawking bohr schroedinger hamilton wheeler maxwell debroglie einstein gauss newton euler feynman dirac cauchy hawking bohr schroedinger hamilton wheeler maxwell debroglie einstein gauss newton euler feynman dirac cauchy hawking bohr schroedinger hamilton wheeler maxwell debroglie einstein gauss newton euler feynman dirac cauchy hawking bohr schroedinger hamilton wheeler maxwell debroglie einstein gauss newton euler feynman dirac cauchy hawking bohr schroedinger hamilton wheeler maxwell debroglie einstein gauss newton euler feynman dirac cauchy hawking bohr schroedinger hamilton wheeler maxwell debroglie einstein gauss newton euler feynman dirac cauchy hawking bohr schroedinger hamilton wheeler maxwell debroglie einstein gauss newton euler feynman dirac cauchy hawking bohr schroedinger hamilton wheeler maxwell debroglie einstein gauss newton 
         </div>
-        <div class="al" style="background:#00AA00; padding:20px;">
+        <div class="sb" style="background:#00AA00; padding:20px;">
         Frugal
         </div>
     </div>
 
-    <div class="al al-text" style="margin-top:40px;">
+    <div class="sb sb-text" style="margin-top:40px;">
         <b>Test 7</b><br/>
-        Same as 4, but this one uses the <b>al-content-to-top</b> class
+        Same as 4, but this one uses the <b>sb-content-to-top</b> class
     </div>
-    <div class="al al-boxes al-greedy-1" style="margin-top:20px;">
-        <div class="al al-explicit" style="background:#00CC00; padding:20px; width:400px;">
+    <div class="sb sb-boxes sb-greedy-1" style="margin-top:20px;">
+        <div class="sb sb-explicit" style="background:#00CC00; padding:20px; width:400px;">
         
-            <div class="al al-vertical al-boxes al-content-to-top" style="background:#CC00CC;">
-            <div class="al" style="padding:10px; background:#0066CC">ABC</div>
-            <div class="al" style="padding:10px; background:#00CC66">123</div>
+            <div class="sb sb-vertical sb-boxes sb-content-to-top" style="background:#CC00CC;">
+            <div class="sb" style="padding:10px; background:#0066CC">ABC</div>
+            <div class="sb" style="padding:10px; background:#00CC66">123</div>
             </div>
         
         </div>
-        <div class="al al-greedy" style="background:#009900; padding:20px;">
+        <div class="sb sb-greedy" style="background:#009900; padding:20px;">
         euler feynman dirac cauchy hawking bohr schroedinger hamilton wheeler maxwell debroglie einstein gauss newton euler feynman dirac cauchy hawking bohr schroedinger hamilton wheeler maxwell debroglie einstein gauss newton euler feynman dirac cauchy hawking bohr schroedinger hamilton wheeler maxwell debroglie einstein gauss newton euler feynman dirac cauchy hawking bohr schroedinger hamilton wheeler maxwell debroglie einstein gauss newton euler feynman dirac cauchy hawking bohr schroedinger hamilton wheeler maxwell debroglie einstein gauss newton euler feynman dirac cauchy hawking bohr schroedinger hamilton wheeler maxwell debroglie einstein gauss newton euler feynman dirac cauchy hawking bohr schroedinger hamilton wheeler maxwell debroglie einstein gauss newton euler feynman dirac cauchy hawking bohr schroedinger hamilton wheeler maxwell debroglie einstein gauss newton euler feynman dirac cauchy hawking bohr schroedinger hamilton wheeler maxwell debroglie einstein gauss newton euler feynman dirac cauchy hawking bohr schroedinger hamilton wheeler maxwell debroglie einstein gauss newton euler feynman dirac cauchy hawking bohr schroedinger hamilton wheeler maxwell debroglie einstein gauss newton euler feynman dirac cauchy hawking bohr schroedinger hamilton wheeler maxwell debroglie einstein gauss newton euler feynman dirac cauchy hawking bohr schroedinger hamilton wheeler maxwell debroglie einstein gauss newton euler feynman dirac cauchy hawking bohr schroedinger hamilton wheeler maxwell debroglie einstein gauss newton euler feynman dirac cauchy hawking bohr schroedinger hamilton wheeler maxwell debroglie einstein gauss newton euler feynman dirac cauchy hawking bohr schroedinger hamilton wheeler maxwell debroglie einstein gauss newton 
         </div>
-        <div class="al" style="background:#00AA00; padding:20px;">
+        <div class="sb" style="background:#00AA00; padding:20px;">
         Frugal
         </div>
     </div>
 
-    <div class="al al-text" style="margin-top:40px;">
+    <div class="sb sb-text" style="margin-top:40px;">
         <b>Test 8</b><br/>
-        Same as 4, but this one uses the <b>al-content-to-bottom</b> class
+        Same as 4, but this one uses the <b>sb-content-to-bottom</b> class
     </div>
-    <div class="al al-boxes al-greedy-1" style="margin-top:20px;">
-        <div class="al al-explicit" style="background:#00CC00; padding:20px; width:400px;">
+    <div class="sb sb-boxes sb-greedy-1" style="margin-top:20px;">
+        <div class="sb sb-explicit" style="background:#00CC00; padding:20px; width:400px;">
         
-            <div class="al al-vertical al-boxes al-content-to-bottom" style="background:#CC00CC;">
-            <div class="al" style="padding:10px; background:#0066CC">ABC</div>
-            <div class="al" style="padding:10px; background:#00CC66">123</div>
+            <div class="sb sb-vertical sb-boxes sb-content-to-bottom" style="background:#CC00CC;">
+            <div class="sb" style="padding:10px; background:#0066CC">ABC</div>
+            <div class="sb" style="padding:10px; background:#00CC66">123</div>
             </div>
         
         </div>
-        <div class="al al-greedy" style="background:#009900; padding:20px;">
+        <div class="sb sb-greedy" style="background:#009900; padding:20px;">
         euler feynman dirac cauchy hawking bohr schroedinger hamilton wheeler maxwell debroglie einstein gauss newton euler feynman dirac cauchy hawking bohr schroedinger hamilton wheeler maxwell debroglie einstein gauss newton euler feynman dirac cauchy hawking bohr schroedinger hamilton wheeler maxwell debroglie einstein gauss newton euler feynman dirac cauchy hawking bohr schroedinger hamilton wheeler maxwell debroglie einstein gauss newton euler feynman dirac cauchy hawking bohr schroedinger hamilton wheeler maxwell debroglie einstein gauss newton euler feynman dirac cauchy hawking bohr schroedinger hamilton wheeler maxwell debroglie einstein gauss newton euler feynman dirac cauchy hawking bohr schroedinger hamilton wheeler maxwell debroglie einstein gauss newton euler feynman dirac cauchy hawking bohr schroedinger hamilton wheeler maxwell debroglie einstein gauss newton euler feynman dirac cauchy hawking bohr schroedinger hamilton wheeler maxwell debroglie einstein gauss newton euler feynman dirac cauchy hawking bohr schroedinger hamilton wheeler maxwell debroglie einstein gauss newton euler feynman dirac cauchy hawking bohr schroedinger hamilton wheeler maxwell debroglie einstein gauss newton euler feynman dirac cauchy hawking bohr schroedinger hamilton wheeler maxwell debroglie einstein gauss newton euler feynman dirac cauchy hawking bohr schroedinger hamilton wheeler maxwell debroglie einstein gauss newton euler feynman dirac cauchy hawking bohr schroedinger hamilton wheeler maxwell debroglie einstein gauss newton euler feynman dirac cauchy hawking bohr schroedinger hamilton wheeler maxwell debroglie einstein gauss newton euler feynman dirac cauchy hawking bohr schroedinger hamilton wheeler maxwell debroglie einstein gauss newton 
         </div>
-        <div class="al" style="background:#00AA00; padding:20px;">
+        <div class="sb" style="background:#00AA00; padding:20px;">
         Frugal
         </div>
     </div>
 
-    <div class="al al-text" style="margin-top:40px;">
+    <div class="sb sb-text" style="margin-top:40px;">
         <b>Test 9</b><br/>
-        Same as 4, but this one uses the <b>al-content-center-v</b> class
+        Same as 4, but this one uses the <b>sb-content-center-v</b> class
     </div>
-    <div class="al al-boxes al-greedy-1" style="margin-top:20px;">
-        <div class="al al-explicit" style="background:#00CC00; padding:20px; width:400px;">
+    <div class="sb sb-boxes sb-greedy-1" style="margin-top:20px;">
+        <div class="sb sb-explicit" style="background:#00CC00; padding:20px; width:400px;">
         
-            <div class="al al-vertical al-boxes al-content-center-v" style="background:#CC00CC;">
-                <div class="al" style="padding:10px; background:#0066CC">ABC</div>
-                <div class="al" style="padding:10px; background:#00CC66">123</div>
+            <div class="sb sb-vertical sb-boxes sb-content-center-v" style="background:#CC00CC;">
+                <div class="sb" style="padding:10px; background:#0066CC">ABC</div>
+                <div class="sb" style="padding:10px; background:#00CC66">123</div>
             </div>
         
         </div>
-        <div class="al al-greedy" style="background:#009900; padding:20px;">
+        <div class="sb sb-greedy" style="background:#009900; padding:20px;">
         euler feynman dirac cauchy hawking bohr schroedinger hamilton wheeler maxwell debroglie einstein gauss newton euler feynman dirac cauchy hawking bohr schroedinger hamilton wheeler maxwell debroglie einstein gauss newton euler feynman dirac cauchy hawking bohr schroedinger hamilton wheeler maxwell debroglie einstein gauss newton euler feynman dirac cauchy hawking bohr schroedinger hamilton wheeler maxwell debroglie einstein gauss newton euler feynman dirac cauchy hawking bohr schroedinger hamilton wheeler maxwell debroglie einstein gauss newton euler feynman dirac cauchy hawking bohr schroedinger hamilton wheeler maxwell debroglie einstein gauss newton euler feynman dirac cauchy hawking bohr schroedinger hamilton wheeler maxwell debroglie einstein gauss newton euler feynman dirac cauchy hawking bohr schroedinger hamilton wheeler maxwell debroglie einstein gauss newton euler feynman dirac cauchy hawking bohr schroedinger hamilton wheeler maxwell debroglie einstein gauss newton euler feynman dirac cauchy hawking bohr schroedinger hamilton wheeler maxwell debroglie einstein gauss newton euler feynman dirac cauchy hawking bohr schroedinger hamilton wheeler maxwell debroglie einstein gauss newton euler feynman dirac cauchy hawking bohr schroedinger hamilton wheeler maxwell debroglie einstein gauss newton euler feynman dirac cauchy hawking bohr schroedinger hamilton wheeler maxwell debroglie einstein gauss newton euler feynman dirac cauchy hawking bohr schroedinger hamilton wheeler maxwell debroglie einstein gauss newton euler feynman dirac cauchy hawking bohr schroedinger hamilton wheeler maxwell debroglie einstein gauss newton euler feynman dirac cauchy hawking bohr schroedinger hamilton wheeler maxwell debroglie einstein gauss newton 
         </div>
-        <div class="al" style="background:#00AA00; padding:20px;">
+        <div class="sb" style="background:#00AA00; padding:20px;">
         Frugal
         </div>
     </div>
