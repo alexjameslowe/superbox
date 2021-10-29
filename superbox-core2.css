@@ -33,7 +33,7 @@
     flex-wrap: wrap;
   } */
   /*the box container. the nowrap forces this to conserve horizontal space */
-  .sb.sb-hzl {
+  .sb.sb-h {
     flex-wrap: nowrap;
   }
   
@@ -43,7 +43,7 @@
     -ms-flex: 0 0 100%;
   } */
   /*elements in a boxes container will behave like boxes*/
-  .sb.sb-hzl > .sb, .sb.sb-vrl > .sb {
+  .sb.sb-h > .sb, .sb.sb-v > .sb {
     flex: 0 0 auto;
     -ms-flex: 0 0 auto;
   }
@@ -69,7 +69,7 @@
    * vertical-mode-secondary-default-and-alternate.html
    *
    */
-  .sb.sb-hzl.sb-content-alt-secondary  {
+  .sb.sb-h.sb-content-alt-secondary  {
     align-items: flex-start;
   }
   
@@ -153,7 +153,7 @@
    * Switch the container to work vertically instead of horizontally.
    *
    */
-  .sb-vrl.sb-content-strict-height {
+  .sb-v.sb-content-strict-height {
     display: flex;
     flex-direction: column;
     position: absolute;
@@ -171,7 +171,7 @@
    * See the BROKEN-XY-PARITY-NOTE
    * 
    */
-  .sb-vrl {
+  .sb-v {
     display: flex;
     flex: 0 0 auto; 
     width: 100%;
@@ -188,10 +188,10 @@
    * But we don't need anything super-intelligent here. In vertical-conservation, the vertical-conservation rules
    * are complex and have greedy/vs frugal and all that rot, but the width requirements are simple, so we can get
    * away with letting an explict-width of 100% do the work of widthing for us.*/
-  .sb-vrl > .sb {
+  .sb-v > .sb {
     width: 100%;
   }
-  .sb-vrl.sb-content-alt-secondary > .sb {
+  .sb-v.sb-content-alt-secondary > .sb {
     width: auto;
   }
   
@@ -204,10 +204,10 @@
   * height:100% for that. Same thing. Horizontal-conservation means that horizontal rules are 
   * complex and require flex, but the height rules are dead-simple and require height:100%.
   * See case-study-wrapper-problem: #Uneccessary Wrapper */
-  .sb-vrl > .sb.sb-hzl > .sb {
+  .sb-v > .sb.sb-h > .sb {
     height: 100%;
   }
-  .sb-vrl > .sb.sb-hzl.sb-content-alt-secondary > .sb {
+  .sb-v > .sb.sb-h.sb-content-alt-secondary > .sb {
     height: auto;
   }
   
@@ -217,7 +217,7 @@
    * we need this so that when greedy vertical elements have contents that are too high or long 
    * it won't expand the height of the greedy element.
    */
-  .sb-vrl.sb-content-strict-height > .sb.sb-greedy {
+  .sb-v.sb-content-strict-height > .sb.sb-greedy {
     overflow-y: auto;
   }
   
@@ -225,22 +225,22 @@
    * In addition to flex-grow, vertical greedy elements, need flex-basis for some reason.
    *
    */
-  .sb-vrl.sb-greedy-1 > .sb.sb-greedy {
+  .sb-v.sb-greedy-1 > .sb.sb-greedy {
     flex-basis: 100%;
   }
-  .sb-vrl.sb-greedy-2 > .sb.sb-greedy {
+  .sb-v.sb-greedy-2 > .sb.sb-greedy {
     flex-basis: 50%;
   }
-  .sb-vrl.sb-greedy-3 > .sb.sb-greedy {
+  .sb-v.sb-greedy-3 > .sb.sb-greedy {
     flex-basis: 33%;
   }
-  .sb-vrl.sb-greedy-4 > .sb.sb-greedy {
+  .sb-v.sb-greedy-4 > .sb.sb-greedy {
     flex-basis: 25%;
   }
-  .sb-vrl.sb-greedy-5 > .sb.sb-greedy {
+  .sb-v.sb-greedy-5 > .sb.sb-greedy {
     flex-basis: 20%;
   }
-  .sb-vrl.sb-greedy-6 > .sb.sb-greedy {
+  .sb-v.sb-greedy-6 > .sb.sb-greedy {
     flex-basis: 16.67%;
   }
   
@@ -250,7 +250,7 @@
   /* .sb.sb-boxes.sb-content-center-v, .sb.sb-rows.sb-content-center-v {
     align-items: center;
   } */
-  .sb.sb-hzl.sb-content-center-v {
+  .sb.sb-h.sb-content-center-v {
     align-items: center;
   }
   
@@ -258,10 +258,10 @@
    * for vertical, we have to switch to align-items for horizontal centering.
    * Otherwise, we can use justify-content. Has to do with flexbox cross-axis.
    */
-  .sb.sb-vrl.sb-content-alt-secondary.sb-content-center-h {
+  .sb.sb-v.sb-content-alt-secondary.sb-content-center-h {
     align-items: center;
   }
-  .sb.sb-vrl.sb-content-center-v, .sb.sb-hzl.sb-content-center-h {
+  .sb.sb-v.sb-content-center-v, .sb.sb-h.sb-content-center-h {
     justify-content: center;
   }
   
@@ -270,21 +270,21 @@
    * align content boxes right, left, top, bottom, for both
    * the h-mode and v-mode containers.
    */
-  .sb.sb-hzl.sb-content-to-left, .sb.sb-vrl.sb-content-to-top {
+  .sb.sb-h.sb-content-to-left, .sb.sb-v.sb-content-to-top {
     justify-content: flex-start;
   }
-  .sb.sb-hzl.sb-content-to-right, .sb.sb-vrl.sb-content-to-bottom {
+  .sb.sb-h.sb-content-to-right, .sb.sb-v.sb-content-to-bottom {
     justify-content: flex-end;
   }
-  .sb.sb-vrl.sb-content-to-left, .sb.sb-hzl.sb-content-alt-secondary.sb-content-to-top {
+  .sb.sb-v.sb-content-to-left, .sb.sb-h.sb-content-alt-secondary.sb-content-to-top {
     align-items: flex-start;
   }
-  .sb.sb-vrl.sb-content-to-right, .sb.sb-hzl.sb-content-alt-secondary.sb-content-to-bottom {
+  .sb.sb-v.sb-content-to-right, .sb.sb-h.sb-content-alt-secondary.sb-content-to-bottom {
     align-items: flex-end;
   }
   
   
-  .sb.sb-hzl.sb-content-center {
+  .sb.sb-h.sb-content-center {
     align-items: center;
     justify-content: center;
   }
@@ -300,16 +300,16 @@
   /*for the sb-boxes container. This is a new sibling of sb-greedy, sb-frugal.
   sb-uniform. So, there are three uniform elements which means give them a 
   flex width of 33% and tell them to hold it with the grow and shrink set to 1.*/
-  .sb.sb-hzl.sb-uniform-2 > .sb, .sb.sb-vrl.sb-uniform-2 > .sb {
+  .sb.sb-h.sb-uniform-2 > .sb, .sb.sb-v.sb-uniform-2 > .sb {
     flex: 1 1 50%;
   }
-  .sb.sb-hzl.sb-uniform-3 > .sb, .sb.sb-vrl.sb-uniform-3 > .sb {
+  .sb.sb-h.sb-uniform-3 > .sb, .sb.sb-v.sb-uniform-3 > .sb {
     flex: 1 1 33%;
   }
-  .sb.sb-hzl.sb-uniform-4 > .sb, .sb.sb-vrl.sb-uniform-4 > .sb {
+  .sb.sb-h.sb-uniform-4 > .sb, .sb.sb-v.sb-uniform-4 > .sb {
     flex: 1 1 25%;
   }
-  .sb.sb-hzl.sb-uniform-5 > .sb, .sb.sb-vrl.sb-uniform-5 > .sb {
+  .sb.sb-h.sb-uniform-5 > .sb, .sb.sb-v.sb-uniform-5 > .sb {
     flex: 1 1 20%;
   }
   
@@ -330,18 +330,18 @@
     padding:10px;
   }
   /*uniform gutter 20px: this is for the direct children of sb-g{x} containers*/
-  .sb.sb-hzl.sb-g10 > .sb:not(:first-child) {
+  .sb.sb-h.sb-g10 > .sb:not(:first-child) {
     margin-left:10px;
   }
-  .sb.sb-vrl.sb-g10 > .sb:not(:first-child) {
+  .sb.sb-v.sb-g10 > .sb:not(:first-child) {
     margin-top:10px;
   }
   /*uniform gutter 20px: this is for nested descendants of the sb-g{x} containers.
   allow for the sb-gr class to stop the gutter behavior*/
-  .sb.sb-g10 .sb.sb-hzl:not(.sb-gr) > .sb:not(:first-child) {
+  .sb.sb-g10 .sb.sb-h:not(.sb-gr) > .sb:not(:first-child) {
     margin-left:10px;
   }
-  .sb.sb-g10 .sb.sb-vrl:not(.sb-gr) > .sb:not(:first-child) {
+  .sb.sb-g10 .sb.sb-v:not(.sb-gr) > .sb:not(:first-child) {
     margin-top:10px;
   }
   
@@ -352,18 +352,18 @@
     padding:20px;
   }
   /*uniform gutter 20px: this is for the direct children of sb-g{x} containers*/
-  .sb.sb-hzl.sb-g20 > .sb:not(:first-child) {
+  .sb.sb-h.sb-g20 > .sb:not(:first-child) {
     margin-left:20px;
   }
-  .sb.sb-vrl.sb-g20 > .sb:not(:first-child) {
+  .sb.sb-v.sb-g20 > .sb:not(:first-child) {
     margin-top:20px;
   }
   /*uniform gutter 20px: this is for nested descendants of the sb-g{x} containers.
   allow for the sb-gr class to stop the gutter behavior*/
-  .sb.sb-g20 .sb.sb-hzl:not(.sb-gr) > .sb:not(:first-child) {
+  .sb.sb-g20 .sb.sb-h:not(.sb-gr) > .sb:not(:first-child) {
     margin-left:20px;
   }
-  .sb.sb-g20 .sb.sb-vrl:not(.sb-gr) > .sb:not(:first-child) {
+  .sb.sb-g20 .sb.sb-v:not(.sb-gr) > .sb:not(:first-child) {
     margin-top:20px;
   }
 
@@ -375,18 +375,18 @@
     padding:30px;
   }
   /*uniform gutter 20px: this is for the direct children of sb-g{x} containers*/
-  .sb.sb-hzl.sb-g30 > .sb:not(:first-child) {
+  .sb.sb-h.sb-g30 > .sb:not(:first-child) {
     margin-left:30px;
   }
-  .sb.sb-vrl.sb-g30 > .sb:not(:first-child) {
+  .sb.sb-v.sb-g30 > .sb:not(:first-child) {
     margin-top:30px;
   }
   /*uniform gutter 30px: this is for nested descendants of the sb-g{x} containers.
   allow for the sb-gr class to stop the gutter behavior*/
-  .sb.sb-g10 .sb.sb-hzl:not(.sb-gr) > .sb:not(:first-child) {
+  .sb.sb-g10 .sb.sb-h:not(.sb-gr) > .sb:not(:first-child) {
     margin-left:30px;
   }
-  .sb.sb-g10 .sb.sb-vrl:not(.sb-gr) > .sb:not(:first-child) {
+  .sb.sb-g10 .sb.sb-v:not(.sb-gr) > .sb:not(:first-child) {
     margin-top:30px;
   }
   
@@ -397,7 +397,7 @@
   See example-100vh-with-big-image to see this in action.
   Right now it's only geared to work in vertical-conserved situations.
   */
-  .sb.sb-vrl > .sb-greedy > .sb-img-fill {
+  .sb.sb-v > .sb-greedy > .sb-img-fill {
     position: absolute;
     display: flex;
     left:0px;
@@ -474,34 +474,34 @@
     /*Uniform gutters assigned to .sb.sb-hrz.sb-gtm will have to reset the margin rules at the responsive threshold
     so that they act like vertical elements.*/
     /*uniform-gutter 10px: direct descendants of sb-g10*/
-    .sb.sb-hzl.sb-gtm.sb-g10 > .sb:not(:first-child) {
+    .sb.sb-h.sb-gtm.sb-g10 > .sb:not(:first-child) {
       margin-top:10px;
       margin-left:0px;
     }
     /*uniform-gutter 20px: nested descendants of sb-g10*/
-    .sb.sb-hzl.sb-gtm.sb-g10 .sb.sb-hzl.sb-gtm:not(.sb-gr)  > .sb:not(:first-child) {
+    .sb.sb-h.sb-gtm.sb-g10 .sb.sb-h.sb-gtm:not(.sb-gr)  > .sb:not(:first-child) {
       margin-top:10;
       margin-left:0px;
     }
     
     /*uniform-gutter 20px: direct descendants of sb-g20*/
-    .sb.sb-hzl.sb-gtm.sb-g20 > .sb:not(:first-child) {
+    .sb.sb-h.sb-gtm.sb-g20 > .sb:not(:first-child) {
       margin-top:20px;
       margin-left:0px;
     }
     /*uniform-gutter 20px: nested descendants of sb-g20*/
-    .sb.sb-hzl.sb-gtm.sb-g20 .sb.sb-hzl.sb-gtm:not(.sb-gr)  > .sb:not(:first-child) {
+    .sb.sb-h.sb-gtm.sb-g20 .sb.sb-h.sb-gtm:not(.sb-gr)  > .sb:not(:first-child) {
       margin-top:20px;
       margin-left:0px;
     }
   
     /*uniform-gutter 30px: direct descendants of sb-g10*/
-    .sb.sb-hzl.sb-gtm.sb-g30 > .sb:not(:first-child) {
+    .sb.sb-h.sb-gtm.sb-g30 > .sb:not(:first-child) {
       margin-top:30px;
       margin-left:0px;
     }
     /*uniform-gutter 20px: nested descendants of sb-g10*/
-    .sb.sb-hzl.sb-gtm.sb-g30 .sb.sb-hzl.sb-gtm:not(.sb-gr)  > .sb:not(:first-child) {
+    .sb.sb-h.sb-gtm.sb-g30 .sb.sb-h.sb-gtm:not(.sb-gr)  > .sb:not(:first-child) {
       margin-top:30;
       margin-left:0px;
     }
@@ -512,44 +512,44 @@
     the responsive threshold, those boxes will go horizontal.
     */
     /*uniform-gutter 10px: direct descendants of sb-g20*/
-    .sb.sb-vrl.sb-gtm2.sb-g10 > .sb:not(:first-child) {
+    .sb.sb-v.sb-gtm2.sb-g10 > .sb:not(:first-child) {
       margin-left:10px;
       margin-top:0px;
     }
     /*uniform-gutter 10px: nested descendants of sb-g10
     Allow the sb-gr to break the behavior*/
-    .sb.sb-vrl.sb-gtm2.sb-g10 .sb.sb-vrl.sb-gtm2:not(.sb-gr)  > .sb:not(:first-child) {
+    .sb.sb-v.sb-gtm2.sb-g10 .sb.sb-v.sb-gtm2:not(.sb-gr)  > .sb:not(:first-child) {
       margin-left:10px;
       margin-top:0px;
     }
 
     /*uniform-gutter 20px: direct descendants of sb-g20*/
-    .sb.sb-vrl.sb-gtm2.sb-g20 > .sb:not(:first-child) {
+    .sb.sb-v.sb-gtm2.sb-g20 > .sb:not(:first-child) {
       margin-left:20px;
       margin-top:0px;
     }
     /*uniform-gutter 20px: nested descendants of sb-g20
     Allow the sb-gr to break the behavior*/
-    .sb.sb-vrl.sb-gtm2.sb-g20 .sb.sb-vrl.sb-gtm2:not(.sb-gr)  > .sb:not(:first-child) {
+    .sb.sb-v.sb-gtm2.sb-g20 .sb.sb-v.sb-gtm2:not(.sb-gr)  > .sb:not(:first-child) {
       margin-left:20px;
       margin-top:0px;
     }
 
     /*uniform-gutter 30px: direct descendants of sb-g20*/
-    .sb.sb-vrl.sb-gtm2.sb-g30 > .sb:not(:first-child) {
+    .sb.sb-v.sb-gtm2.sb-g30 > .sb:not(:first-child) {
       margin-left:30px;
       margin-top:0px;
     }
     /*uniform-gutter 30px: nested descendants of sb-g30
     Allow the sb-gr to break the behavior*/
-    .sb.sb-vrl.sb-gtm2.sb-g30 .sb.sb-vrl.sb-gtm2:not(.sb-gr)  > .sb:not(:first-child) {
+    .sb.sb-v.sb-gtm2.sb-g30 .sb.sb-v.sb-gtm2:not(.sb-gr)  > .sb:not(:first-child) {
       margin-left:30px;
       margin-top:0px;
     }
   
     /*the gtm flag applied to vertical elements will basically make them 
     behave like rows*/
-    .sb.sb-vrl.sb-gtm {
+    .sb.sb-v.sb-gtm {
       display: flex;
       flex: 0 0 100%;
       -ms-flex: 0 0 100%;
@@ -559,26 +559,26 @@
       position: relative; 
       height: auto;
     }
-    .sb.sb-vrl.sb-gtm > .sb {
+    .sb.sb-v.sb-gtm > .sb {
       flex: 0 0 100%;
       -ms-flex: 0 0 100%;
     }
-    .sb.sb-vrl.sb-gtm > .sb {
+    .sb.sb-v.sb-gtm > .sb {
       width: auto;
     }
-    .sb.sb-vrl.sb-gtm.sb-content-alt-secondary > .sb {
+    .sb.sb-v.sb-gtm.sb-content-alt-secondary > .sb {
       width: auto;
     }
-    .sb.sb-vrl.sb-gtm > .sb.sb-hzl > .sb {
+    .sb.sb-v.sb-gtm > .sb.sb-h > .sb {
       width: auto;
     }
-    .sb.sb-vrl.sb-gtm > .sb.sb-hzl.sb-content-alt-secondary > .sb {
+    .sb.sb-v.sb-gtm > .sb.sb-h.sb-content-alt-secondary > .sb {
       height: auto;
     }
 
     /*sb-gtm2 which is a flag for vertical elements to become horizontal below
     the responsive threshold. So */
-    .sb.sb-vrl.sb-gtm2 {
+    .sb.sb-v.sb-gtm2 {
       display: flex;
       flex-direction: row;
       flex: 0 0 100%;
@@ -588,17 +588,17 @@
       box-sizing: border-box;
       position: relative; /*For absolutely positioned children*/
     }
-    .sb-vrl.sb-gtm2 > .sb {
+    .sb-v.sb-gtm2 > .sb {
       width: auto;
     }
-    .sb.sb-vrl.sb-gtm2 {
+    .sb.sb-v.sb-gtm2 {
       flex-wrap: nowrap;
     }
-    .sb.sb-vrl.sb-gtm2 > .sb:not(.sb-greedy) {
+    .sb.sb-v.sb-gtm2 > .sb:not(.sb-greedy) {
       flex: 0 0 auto;
       -ms-flex: 0 0 auto;
     }
-    .sb.sb-vrl.sb-gtm2.sb-content-alt-secondary  {
+    .sb.sb-v.sb-gtm2.sb-content-alt-secondary  {
       align-items: flex-start;
     }
 
