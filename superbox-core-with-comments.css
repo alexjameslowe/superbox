@@ -179,10 +179,6 @@ html {
   box-sizing: border-box;
   flex-direction: column;
   position: relative; /*For absolutely positioned children*/
-
-  /*We want the the stack to take up all of it available height be default, 
-  but if it goes beyond that, then it's going to end up generating height of its own.*/
-  /* height: 100%; */
 }
 
 
@@ -536,6 +532,16 @@ of the screen, and then when it reaches a break point, it will apply for screens
    TODOs and notes
 
 \******************/
+
+
+/*
+We should get rid of sb-boxes and sb-rows. Makes no sense. Should only be 
+sb-hrz and sb-vrt to get us to the horizontal and vertical conservation modes.
+There shouldn't be a sb-boxes-gt-m class. 
+
+There should only be a gt-m, and that will affect how how the sb-vrt, sb-hrz works.s
+*/
+
 
 /**
  TODO: See 1.2 in BROKEN-XY-PARITY-NOTE. when you use sb-vertical, it should be implicit

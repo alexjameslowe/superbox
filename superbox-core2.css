@@ -1,0 +1,746 @@
+/*clear the defaults.*/
+* {
+    margin: 0px;
+    padding: 0px;
+    border: 0px;
+    /*border: 1px solid red;*/
+  }
+  
+  /*https://css-tricks.com/removing-the-dotted-outline/ 
+  get rid of that annoying dotted border around links.*/
+  a {
+    outline: 0;
+  }
+  
+  body,
+  html {
+    height: 100%;
+  }
+  
+  /*An al element by default is just a row.*/
+  .sb {
+    display: flex;
+    flex: 0 0 100%;
+    -ms-flex: 0 0 100%;
+    flex-wrap: nowrap;
+    box-sizing: border-box;
+    position: relative; /*For absolutely positioned children*/
+  }
+  
+  
+  /*the row container. */
+  /* .sb.sb-rows {
+    flex-wrap: wrap;
+  } */
+  /*the box container. the nowrap forces this to conserve horizontal space */
+  .sb.sb-hzl {
+    flex-wrap: nowrap;
+  }
+  
+  /*elements in a rows container will behave like rows*/
+  /* .sb.sb-rows > .sb {
+    flex: 0 0 100%;
+    -ms-flex: 0 0 100%;
+  } */
+  /*elements in a boxes container will behave like boxes*/
+  .sb.sb-hzl > .sb, .sb.sb-vrl > .sb {
+    flex: 0 0 auto;
+    -ms-flex: 0 0 auto;
+  }
+  /**
+   * This mysterious flex-align:start style. What's deal here?
+   * This causes content boxes to have a frugal widths or heights along the secondary
+   * dimension.
+   *
+   * An h-mode box has a primary dimension of x and a secondary dimension of y.
+   * the x-dimension is conserved with greedy/frugal rules. The secondary dimension is y, 
+   * and this secondary dimension has two modes: either take up all the height it can or 
+   * it will take up height frugally. The default is to take up all the height which you can 
+   * see in the examples: horizontal-mode-primary test #1.
+   *
+   * This class switches this behavior to the alternate mode. So in the case of h-mode boxes,
+   * they will height themselves frugally.
+   *
+   * The same applied for v-mode boxes.
+   *
+   * Switching to secondary behavior with this class opens up some possibilities 
+   * for adjusting the position of the boxes, which you can see in either 
+   * horizontal-mode-secondary-default-and-alternate.html and 
+   * vertical-mode-secondary-default-and-alternate.html
+   *
+   */
+  .sb.sb-hzl.sb-content-alt-secondary  {
+    align-items: flex-start;
+  }
+  
+  /**
+   * Adding this so that you can space contents.
+   *
+   */
+  .sb-content-space-around {
+    justify-content: space-around;
+  }
+  .sb-content-space-between {
+    justify-content: space-between;
+  }
+  .sb-content-space-evenly {
+    justify-content: space-evenly;
+  }
+  
+  /**sb-explicit is for h-mode or v-mode elements that have an explict width/height.
+   * The al boxes have flex-shrink:0 by default. If there are any sb-explicit in a h-mode or v-mode
+   * element, then we want the explicit ones to not shrink, but we want the others to be able
+   * to shrink in order to accommodate them.*/
+  .sb.sb-greedy-1 > .sb:not(.sb-explicit), 
+  .sb.sb-greedy-2 > .sb:not(.sb-explicit), 
+  .sb.sb-greedy-3 > .sb:not(.sb-explicit), 
+  .sb.sb-greedy-4 > .sb:not(.sb-explicit), 
+  .sb.sb-greedy-5 > .sb:not(.sb-explicit), 
+  .sb.sb-greedy-6 > .sb:not(.sb-explicit) {
+    flex-shrink: 1;
+  }
+  
+  .sb > .sb.sb-greedy {
+    flex: 0 1 auto;
+    -ms-flex: 0 1 auto;
+  }
+  .sb.sb-greedy-1 > .sb.sb-greedy {
+    flex-grow: 1;
+  }
+  .sb.sb-greedy-2 > .sb.sb-greedy {
+    flex-grow: 0.5;
+  }
+  .sb.sb-greedy-3 > .sb.sb-greedy {
+    flex-grow: 0.33;
+  }
+  .sb.sb-greedy-4 > .sb.sb-greedy {
+    flex-grow: 0.25;
+  }
+  .sb.sb-greedy-5 > .sb.sb-greedy {
+    flex-grow: 0.2;
+  }
+  .sb.sb-greedy-6 > .sb.sb-greedy {
+    flex-grow: 0.1667;
+  }
+  
+  
+  /**
+   * flexbox has a weird thing going on with absolutely-positioned children.
+   * assigning top:0px will make it break out of the container. don't know why. you'll never know why.
+   *
+   */
+  .sb-abox {
+    position: absolute;
+    top: auto;
+    left: 0px;
+  }
+  
+  /**
+   * this gives us a piece of "glass" that covers a row or box.
+   * handy for loading messages and modals etc. 
+   *
+   */
+  .sb-spread {
+    position: absolute;
+    top: 0px;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+  }
+  
+  
+  /**
+   * Switch the container to work vertically instead of horizontally.
+   *
+   */
+  .sb-vrl.sb-content-strict-height {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+  }
+  
+  /**
+   * This allow a the elements in a vertical-conserving element to 
+   * generate their own height as they need. This will take up all the
+   * height, and then if it goes beyond that, it will add to that height.
+   *
+   * See the BROKEN-XY-PARITY-NOTE
+   * 
+   */
+  .sb-vrl {
+    display: flex;
+    flex: 0 0 auto; 
+    width: 100%;
+    flex-wrap: nowrap;
+    box-sizing: border-box;
+    flex-direction: column;
+    position: relative; /*For absolutely positioned children*/
+  }
+  
+  
+  /**
+   * This is how we treat the width in vertical-conserved elements. We assume that they behave like rows and 
+   * take up 100% of the width. Why don't we use flex? See, flex in this case is being used for vertical-conservation.
+   * But we don't need anything super-intelligent here. In vertical-conservation, the vertical-conservation rules
+   * are complex and have greedy/vs frugal and all that rot, but the width requirements are simple, so we can get
+   * away with letting an explict-width of 100% do the work of widthing for us.*/
+  .sb-vrl > .sb {
+    width: 100%;
+  }
+  .sb-vrl.sb-content-alt-secondary > .sb {
+    width: auto;
+  }
+  
+  
+  /**
+  * A flip-side to the above argument. If a vertical-mode element (between the > >) switches
+  * to horizontal-mode for it children (the .sb after the last >), then we want the children
+  * to just take up all the height. But just like the rule above, we can't use flex-box do that,
+  * because flex-box is being used for horizontal-conservation. So we need to rely on an explicit
+  * height:100% for that. Same thing. Horizontal-conservation means that horizontal rules are 
+  * complex and require flex, but the height rules are dead-simple and require height:100%.
+  * See case-study-wrapper-problem: #Uneccessary Wrapper */
+  .sb-vrl > .sb.sb-hzl > .sb {
+    height: 100%;
+  }
+  .sb-vrl > .sb.sb-hzl.sb-content-alt-secondary > .sb {
+    height: auto;
+  }
+  
+  
+  /**
+   * This is for vertical greedy elements.
+   * we need this so that when greedy vertical elements have contents that are too high or long 
+   * it won't expand the height of the greedy element.
+   */
+  .sb-vrl.sb-content-strict-height > .sb.sb-greedy {
+    overflow-y: auto;
+  }
+  
+  /**
+   * In addition to flex-grow, vertical greedy elements, need flex-basis for some reason.
+   *
+   */
+  .sb-vrl.sb-greedy-1 > .sb.sb-greedy {
+    flex-basis: 100%;
+  }
+  .sb-vrl.sb-greedy-2 > .sb.sb-greedy {
+    flex-basis: 50%;
+  }
+  .sb-vrl.sb-greedy-3 > .sb.sb-greedy {
+    flex-basis: 33%;
+  }
+  .sb-vrl.sb-greedy-4 > .sb.sb-greedy {
+    flex-basis: 25%;
+  }
+  .sb-vrl.sb-greedy-5 > .sb.sb-greedy {
+    flex-basis: 20%;
+  }
+  .sb-vrl.sb-greedy-6 > .sb.sb-greedy {
+    flex-basis: 16.67%;
+  }
+  
+  /**
+   * Used for centering, justifying
+   */
+  /* .sb.sb-boxes.sb-content-center-v, .sb.sb-rows.sb-content-center-v {
+    align-items: center;
+  } */
+  .sb.sb-hzl.sb-content-center-v {
+    align-items: center;
+  }
+  
+  /**
+   * for vertical, we have to switch to align-items for horizontal centering.
+   * Otherwise, we can use justify-content. Has to do with flexbox cross-axis.
+   */
+  .sb.sb-vrl.sb-content-alt-secondary.sb-content-center-h {
+    align-items: center;
+  }
+  .sb.sb-vrl.sb-content-center-v, .sb.sb-hzl.sb-content-center-h {
+    justify-content: center;
+  }
+  
+  
+  /**
+   * align content boxes right, left, top, bottom, for both
+   * the h-mode and v-mode containers.
+   */
+  .sb.sb-hzl.sb-content-to-left, .sb.sb-vrl.sb-content-to-top {
+    justify-content: flex-start;
+  }
+  .sb.sb-hzl.sb-content-to-right, .sb.sb-vrl.sb-content-to-bottom {
+    justify-content: flex-end;
+  }
+  .sb.sb-vrl.sb-content-to-left, .sb.sb-hzl.sb-content-alt-secondary.sb-content-to-top {
+    align-items: flex-start;
+  }
+  .sb.sb-vrl.sb-content-to-right, .sb.sb-hzl.sb-content-alt-secondary.sb-content-to-bottom {
+    align-items: flex-end;
+  }
+  
+  
+  .sb.sb-hzl.sb-content-center {
+    align-items: center;
+    justify-content: center;
+  }
+  
+  /**
+   * Use this for text with break tags
+   * 
+   */
+  .sb.sb-text {
+    display: block;
+  }
+  
+  /*for the sb-boxes container. This is a new sibling of sb-greedy, sb-frugal.
+  sb-uniform. So, there are three uniform elements which means give them a 
+  flex width of 33% and tell them to hold it with the grow and shrink set to 1.*/
+  .sb.sb-hzl.sb-uniform-2 > .sb, .sb.sb-vrl.sb-uniform-2 > .sb {
+    flex: 1 1 50%;
+  }
+  .sb.sb-hzl.sb-uniform-3 > .sb, .sb.sb-vrl.sb-uniform-3 > .sb {
+    flex: 1 1 33%;
+  }
+  .sb.sb-hzl.sb-uniform-4 > .sb, .sb.sb-vrl.sb-uniform-4 > .sb {
+    flex: 1 1 25%;
+  }
+  .sb.sb-hzl.sb-uniform-5 > .sb, .sb.sb-vrl.sb-uniform-5 > .sb {
+    flex: 1 1 20%;
+  }
+  
+  /*This is an experimental set of classes for making uniform "gutters". 
+  The basic idea is that the outer container gets a 20px padding, and then 
+  the children after the first one just need a margin-left of 20px. Then 
+  you have picture-perfect 20px uniform gutters that are so tough to achieve 
+  manually. 
+  
+  It works for nested elements as well, and note we also have a "reset" class
+  sb-gr which will reset the nesting behavior for if you want to turn the uniform
+  gutters off at a certain level.*/
+  
+  /*uniform gutter 10px: assign uniform gutter of 10px to the container
+  and all the elements beneath it except for children of sb-gr containers
+  will have a nice gutter of 10px */
+  .sb-g10 {
+    padding:10px;
+  }
+  /*uniform gutter 20px: this is for the direct children of sb-g{x} containers*/
+  .sb.sb-hzl.sb-g10 > .sb:not(:first-child) {
+    margin-left:10px;
+  }
+  .sb.sb-vrl.sb-g10 > .sb:not(:first-child) {
+    margin-top:10px;
+  }
+  /*uniform gutter 20px: this is for nested descendants of the sb-g{x} containers.
+  allow for the sb-gr class to stop the gutter behavior*/
+  .sb.sb-g10 .sb.sb-hzl:not(.sb-gr) > .sb:not(:first-child) {
+    margin-left:10px;
+  }
+  .sb.sb-g10 .sb.sb-vrl:not(.sb-gr) > .sb:not(:first-child) {
+    margin-top:10px;
+  }
+  
+  /*uniform gutter 20px: assign uniform gutter of 20px to the container
+  and all the elements beneath it except for children of sb-gr containers
+  will have a nice gutter of 20px */
+  .sb-g20 {
+    padding:20px;
+  }
+  /*uniform gutter 20px: this is for the direct children of sb-g{x} containers*/
+  .sb.sb-hzl.sb-g20 > .sb:not(:first-child) {
+    margin-left:20px;
+  }
+  .sb.sb-vrl.sb-g20 > .sb:not(:first-child) {
+    margin-top:20px;
+  }
+  /*uniform gutter 20px: this is for nested descendants of the sb-g{x} containers.
+  allow for the sb-gr class to stop the gutter behavior*/
+  .sb.sb-g20 .sb.sb-hzl:not(.sb-gr) > .sb:not(:first-child) {
+    margin-left:20px;
+  }
+  .sb.sb-g20 .sb.sb-vrl:not(.sb-gr) > .sb:not(:first-child) {
+    margin-top:20px;
+  }
+
+  
+  /*uniform gutter 30px: assign uniform gutter of 10px to the container
+  and all the elements beneath it except for children of sb-gr containers
+  will have a nice gutter of 30px */
+  .sb-g30 {
+    padding:30px;
+  }
+  /*uniform gutter 20px: this is for the direct children of sb-g{x} containers*/
+  .sb.sb-hzl.sb-g30 > .sb:not(:first-child) {
+    margin-left:30px;
+  }
+  .sb.sb-vrl.sb-g30 > .sb:not(:first-child) {
+    margin-top:30px;
+  }
+  /*uniform gutter 30px: this is for nested descendants of the sb-g{x} containers.
+  allow for the sb-gr class to stop the gutter behavior*/
+  .sb.sb-g10 .sb.sb-hzl:not(.sb-gr) > .sb:not(:first-child) {
+    margin-left:30px;
+  }
+  .sb.sb-g10 .sb.sb-vrl:not(.sb-gr) > .sb:not(:first-child) {
+    margin-top:30px;
+  }
+  
+  
+  /*
+  Image features. 
+  The sb-greedy-img-wrap is meant for situations where you want the image to occupy a greedy element.
+  See example-100vh-with-big-image to see this in action.
+  Right now it's only geared to work in vertical-conserved situations.
+  */
+  .sb.sb-vrl > .sb-greedy > .sb-img-fill {
+    position: absolute;
+    display: flex;
+    left:0px;
+    right:0px;
+    top:0px;
+    bottom:0px;
+  }
+  .sb-img-fill > img {
+    width:100%; 
+    height:100%; 
+    object-position:50% 50%; 
+    object-fit:cover;
+  }
+  .sb-img-contain > img {
+    object-fit:contain;
+  }
+  
+  
+  /*Greater-Than classes. Mobile-first. Your default classes in this case would correspond to the tiniest version 
+  of the screen, and then when it reaches a break point, it will apply for screens that size OR GREATER*/
+  @media only screen and (min-width: 600px) { 
+  
+  }
+  @media only screen and (min-width: 960px) { 
+  
+  }
+  @media only screen and (min-width: 1264px) {  
+  
+  }
+  @media only screen and (min-width: 1904px) { 
+  
+  }
+  
+  
+  /*Less-Than classes. Non-mobile-first. Your default classes in this case would correspond to the biggest version 
+  of the screen, and then when it reaches a break point, it will apply for screens that size OR LESS*/
+  
+  /*less-than xl*/
+  @media (max-width : 1904px) {
+  
+  }
+  
+  /*less-than lg*/
+  @media (max-width : 1264px) {
+  
+  }
+  
+  
+  /*less than md*/
+  @media (max-width : 960px) {
+  
+    /*Less than md size we want boxes, both horizontal and vertical, to just behave like rows.
+    And we redo the margin-rules for the gutter helper classes.*/
+    .sb.sb-gtm {
+      flex-wrap: wrap;  
+    }
+    .sb.sb-gtm > .sb, .sb.sb-gtm.sb-uniform-5 > .sb {
+      flex: 0 0 100%;  
+      -ms-flex: 0 0 100%;
+    }
+    .sb.sb-gtm > .sb,  .sb.sb-gtm.sb-uniform-4 > .sb {
+      flex: 0 0 100%;  
+      -ms-flex: 0 0 100%;
+    }
+    .sb.sb-gtm > .sb,  .sb.sb-gtm.sb-uniform-3 > .sb {
+      flex: 0 0 100%;  
+      -ms-flex: 0 0 100%;
+    }
+    .sb.sb-gtm > .sb,  .sb.sb-gtm.sb-uniform-2 > .sb {
+      flex: 0 0 100%;  
+      -ms-flex: 0 0 100%;
+    }
+  
+    /*Uniform gutters assigned to .sb.sb-hrz.sb-gtm will have to reset the margin rules at the responsive threshold
+    so that they act like vertical elements.*/
+    /*uniform-gutter 10px: direct descendants of sb-g10*/
+    .sb.sb-hzl.sb-gtm.sb-g10 > .sb:not(:first-child) {
+      margin-top:10px;
+      margin-left:0px;
+    }
+    /*uniform-gutter 20px: nested descendants of sb-g10*/
+    .sb.sb-hzl.sb-gtm.sb-g10 .sb.sb-hzl.sb-gtm:not(.sb-gr)  > .sb:not(:first-child) {
+      margin-top:10;
+      margin-left:0px;
+    }
+    
+    /*uniform-gutter 20px: direct descendants of sb-g20*/
+    .sb.sb-hzl.sb-gtm.sb-g20 > .sb:not(:first-child) {
+      margin-top:20px;
+      margin-left:0px;
+    }
+    /*uniform-gutter 20px: nested descendants of sb-g20*/
+    .sb.sb-hzl.sb-gtm.sb-g20 .sb.sb-hzl.sb-gtm:not(.sb-gr)  > .sb:not(:first-child) {
+      margin-top:20px;
+      margin-left:0px;
+    }
+  
+    /*uniform-gutter 30px: direct descendants of sb-g10*/
+    .sb.sb-hzl.sb-gtm.sb-g30 > .sb:not(:first-child) {
+      margin-top:30px;
+      margin-left:0px;
+    }
+    /*uniform-gutter 20px: nested descendants of sb-g10*/
+    .sb.sb-hzl.sb-gtm.sb-g30 .sb.sb-hzl.sb-gtm:not(.sb-gr)  > .sb:not(:first-child) {
+      margin-top:30;
+      margin-left:0px;
+    }
+
+
+    /*Uniform gutters assigned to vertical containers with the special sb-gtm
+    flag are going to have to behave trade their margin properies, because beneath
+    the responsive threshold, those boxes will go horizontal.
+    */
+    /*uniform-gutter 10px: direct descendants of sb-g20*/
+    .sb.sb-vrl.sb-gtm2.sb-g10 > .sb:not(:first-child) {
+      margin-left:10px;
+      margin-top:0px;
+    }
+    /*uniform-gutter 10px: nested descendants of sb-g10
+    Allow the sb-gr to break the behavior*/
+    .sb.sb-vrl.sb-gtm2.sb-g10 .sb.sb-vrl.sb-gtm2:not(.sb-gr)  > .sb:not(:first-child) {
+      margin-left:10px;
+      margin-top:0px;
+    }
+
+    /*uniform-gutter 20px: direct descendants of sb-g20*/
+    .sb.sb-vrl.sb-gtm2.sb-g20 > .sb:not(:first-child) {
+      margin-left:20px;
+      margin-top:0px;
+    }
+    /*uniform-gutter 20px: nested descendants of sb-g20
+    Allow the sb-gr to break the behavior*/
+    .sb.sb-vrl.sb-gtm2.sb-g20 .sb.sb-vrl.sb-gtm2:not(.sb-gr)  > .sb:not(:first-child) {
+      margin-left:20px;
+      margin-top:0px;
+    }
+
+    /*uniform-gutter 30px: direct descendants of sb-g20*/
+    .sb.sb-vrl.sb-gtm2.sb-g30 > .sb:not(:first-child) {
+      margin-left:30px;
+      margin-top:0px;
+    }
+    /*uniform-gutter 30px: nested descendants of sb-g30
+    Allow the sb-gr to break the behavior*/
+    .sb.sb-vrl.sb-gtm2.sb-g30 .sb.sb-vrl.sb-gtm2:not(.sb-gr)  > .sb:not(:first-child) {
+      margin-left:30px;
+      margin-top:0px;
+    }
+  
+    /*the gtm flag applied to vertical elements will basically make them 
+    behave like rows*/
+    .sb.sb-vrl.sb-gtm {
+      display: flex;
+      flex: 0 0 100%;
+      -ms-flex: 0 0 100%;
+      flex-direction: row;
+      flex-wrap: wrap;
+      box-sizing: border-box;
+      position: relative; 
+      height: auto;
+    }
+    .sb.sb-vrl.sb-gtm > .sb {
+      flex: 0 0 100%;
+      -ms-flex: 0 0 100%;
+    }
+    .sb.sb-vrl.sb-gtm > .sb {
+      width: auto;
+    }
+    .sb.sb-vrl.sb-gtm.sb-content-alt-secondary > .sb {
+      width: auto;
+    }
+    .sb.sb-vrl.sb-gtm > .sb.sb-hzl > .sb {
+      width: auto;
+    }
+    .sb.sb-vrl.sb-gtm > .sb.sb-hzl.sb-content-alt-secondary > .sb {
+      height: auto;
+    }
+
+    /*sb-gtm2 which is a flag for vertical elements to become horizontal below
+    the responsive threshold. So */
+    .sb.sb-vrl.sb-gtm2 {
+      display: flex;
+      flex-direction: row;
+      flex: 0 0 100%;
+      -ms-flex: 0 0 100%;
+      width:auto;
+      flex-wrap: nowrap;
+      box-sizing: border-box;
+      position: relative; /*For absolutely positioned children*/
+    }
+    .sb-vrl.sb-gtm2 > .sb {
+      width: auto;
+    }
+    .sb.sb-vrl.sb-gtm2 {
+      flex-wrap: nowrap;
+    }
+    .sb.sb-vrl.sb-gtm2 > .sb:not(.sb-greedy) {
+      flex: 0 0 auto;
+      -ms-flex: 0 0 auto;
+    }
+    .sb.sb-vrl.sb-gtm2.sb-content-alt-secondary  {
+      align-items: flex-start;
+    }
+
+    
+  }
+  
+  /*less-then sm*/
+  @media (max-width : 600px) {
+  
+  }
+  
+  
+  
+  
+  
+  /******************\
+    
+     TODOs and notes
+  
+  \******************/
+  
+  
+  /*
+  We should get rid of sb-boxes and sb-rows. Makes no sense. Should only be 
+  sb-hrz and sb-vrt to get us to the horizontal and vertical conservation modes.
+  There shouldn't be a sb-boxes-gt-m class. 
+  
+  There should only be a gt-m, and that will affect how how the sb-vrt, sb-hrz works.s
+  */
+  
+  
+  /**
+   TODO: See 1.2 in BROKEN-XY-PARITY-NOTE. when you use sb-vertical, it should be implicit
+   that the content-mode is sb-boxes.
+  */
+  
+  /*TODO: the sb-boxes-gt-m and sb-g20: Figure out how that will work with the center alignment for
+  boxes and the sb-content-space* classes.*/
+  
+  /*TODO: the sb-uniform-3: fill that out for numbers 2-6 and make it work with sb-vertical as well.*/
+  
+  /*TODO: the sb-uniform. It should work just like sb-greedy. The wrapper know how many uniform elements there
+  are with like sb-uniform-2 and then you can decide which 2 uniform width ones you want.*/
+  
+  /*TODO: in the horizontal-mode-primary, the test 5,6,7 if you use sb-content-center-v, that will 
+  force the elements to go frugal-height, which is the alternate secondary-dimension behavior. We don't
+  want that. I want that behavior to be triggered only by the sb-content-alt-secondary class.*/
+  
+  /**
+   * BROKEN-XY-PARITY-NOTE: 
+   * We don't treat the vertical and horizontal dimensions quite the same.
+   *
+   * 1: They treat their primary dimensions differently.
+   * 
+   *  1.1: We want to have elements that conserve vertical-space, but unlike horizontal conservation we need 
+   *  to have the two options of either taking up the height and going no further (sb-content-strict-height), 
+   *  or creating extra height if we need it (which is the default behavior and the most common use-case) 
+   *  You would just never have this kind of choice with a horizontal-conserving element because under absolutely 
+   *  no circumstances would you want the content to spread out past the page horizontally and force the user 
+   *  to scroll to the left and right. You only scroll up and down in website world, and that will be the case 
+   *  as long as humans live in 3-dimensional space.
+   *
+   *  1.2: In horizontal-mode, you can choose the mode sb-rows, sb-boxes. 
+   *  sb-rows will take up all the horizontal space, and then stack vertically.
+   *  sb-boxes will conserve space according to greedy-frugal rules.
+   *  But in vertical-mode (i.e. sb-vertical) only sb-boxes makes sense. If you don't 
+   *  specify sb-boxes, then what happens is that every element takes up 100vh, which is weird.
+   * 
+   */
+  
+  
+  
+  /*
+  There was a layout case that's worth noting.
+  I had a full-screen thing that was supposed to appear when you pressed a button. A video and text.
+  For the desktop, this was a vertical-conserving set of elements. Easy enough. 100vh high.
+  
+  Ok, well for mobile, it got really complicated.
+  Portrait mobile, we wanted the video to be flush with the top, preserve the 16x9 aspect ratio.
+  The 100vh thing wasn't appropriate. Needed to have it be vertically scrollable in that case.
+  And then for landscape mobile, we just wanted to show the video across the 100vh with all the t
+  text available underneath available with scrolling. Landscape implies that they're just interested
+  in the video. So there were several competing issues here. Lesson is that vertically-conserving elements
+  is not straightforward for mobile. 
+  */
+  
+  /*
+  overflow-x:hidden;
+  absolutely-positioned background elements tend to activate annoying horizontal scrollbars, and this is the fix.
+  however, safari apparently ignores that style for the body tag, and here's the S.O. post.
+  https://stackoverflow.com/questions/14270084/overflow-xhidden-doesnt-prevent-content-from-overflowing-in-mobile-browsers
+  So if it comes to this overflow problem in safari, a wrapper div inside the body tag with height:100%; and overflow-x:hidden;
+  is probably necessary.
+  */
+  
+  /*
+  TODO: 
+  generate-width problems are tough
+  https://stackoverflow.com/questions/12747045/css-shrink-a-parent-div-to-fit-one-childs-width-and-constrain-the-width-of-th
+  */
+  
+  /*
+  TODO: when you have an image in a flexbox in safari, it wants to stretch the image because of:
+  
+  https://stackoverflow.com/questions/57516373/image-stretching-in-flexbox-in-safari;
+  
+  it does this by default:
+    align-items: stretch; 
+  
+  So on your flexbox container, you need this:
+    align-items: flex-start; 
+  
+    .thumbnail-box {
+    padding: 0px; 
+    display: flex; 
+    justify-content:flex-start;
+    align-items: flex-start; 
+    width:230px;
+  }
+  
+  .thumbnail-box > img {
+    max-width: 100%;
+    max-height: 100%;
+  }
+  
+  Or
+  
+  .thumbnail-box {
+    padding: 0px; 
+    display: flex; 
+    justify-content:flex-start;
+    align-items: flex-start; 
+    width:230px;
+  }
+  
+  .thumbnail-box > img {
+    max-width:230px; 
+    width: 100%; 
+    object-fit: cover;
+  }
+  
+  
+  */
+  
+  
