@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="sb-text/html; charset=UTF-8" />
+<link rel='stylesheet' href='superbox-core-with-comments.css?v=9' type='text/css' media='all'/>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<link href="https://cdn.materialdesignicons.com/5.4.55/css/materialdesignicons.min.css" rel="stylesheet">
+</head>
+
+  <style>
+
+  </style>
+
+
+  <body style="font-family:Verdana; line-height:1.2; font-size:0.9em; padding:30px;">
+
+    <div class="sb sb-text" style="margin-top:40px;">
+      <b>Test 1:</b><br/>
+      Horizontal sb-boxes. In one of the greedy elements has two uniform elements placed vertically.
+      In addition, the outer-wrapper has the sb-boxes-gt-m responsive class, so the whole thing is responsive,
+      and it contains the sb-g20 class to make all of the elements have a gutter between them of 20px. You'll see 
+      that the whole structure behaves well when the responsive threshold is reached.
+    </div>
+    <div class="sb sb-boxes sb-boxes-gt-m sb-greedy-2 sb-g20" style="margin-top:20px; background:tomato">
+      <div class="sb sb-explicit" style="width:100px; background:#0099CC; padding:20px;">
+        100px
+      </div>
+      <div class="sb sb-boxes sb-greedy sb-vertical sb-uniform-2">
+        <div class="sb sb-boxes sb-greedy-1">
+          <div class="sb" style="background:yellow; padding:10px;">A</div>
+          <div class="sb sb-greedy" style="background:goldenrod; padding:10px;">B</div>
+        </div>
+        <div class="sb" style="background:violet; padding:10px;">dirac</div>
+      </div>
+      <div class="sb sb-greedy" style="background:#CC0066; padding:20px;">
+        euler feynman dirac cauchy hawking bohr schroedinger hamilton wheeler maxwell debroglie einstein gauss newton euler feynman dirac cauchy hawking bohr schroedinger hamilton wheeler maxwell debroglie einstein gauss newton 
+      </div>
+      <div class="sb sb-explicit" style="width:200px; background:#0099CC; padding:20px;">
+        200px
+      </div>
+      <div class="sb" style="background:#CC9900; padding:20px;">
+        Frugal
+      </div>
+    </div>
+
+
+    <div class="sb sb-text" style="margin-top:40px;">
+      <b>Test 2:</b><br/>
+      Similar to Test 1, only we're making use of the sb-gr class. "r" stands for "reset". It breaks the 
+      nesting behavior of the gutter assignment, so that there and beneach 
+    </div>
+    <div class="sb sb-boxes sb-boxes-gt-m sb-greedy-1 sb-g20" style="margin-top:20px; background:tomato">
+      <div class="sb sb-explicit" style="width:100px; background:#0099CC; padding:20px;">
+        100px
+      </div>
+      <div class="sb sb-boxes sb-greedy sb-vertical sb-uniform-2">
+        <div class="sb sb-boxes sb-greedy-1">
+          <div class="sb" style="background:yellow; padding:10px;">A</div>
+          <div class="sb sb-greedy sb-boxes sb-gr sb-greedy-1" style="background:goldenrod; padding:10px;">
+            <div class="sb" style="background:#9900CC; padding:10px;">1</div>
+            <div class="sb" style="background:#CC0099; padding:10px;">2</div>
+            <div class="sb" style="background:#99CC00; padding:10px;">3</div>
+            <div class="sb sb-greedy sb-boxes sb-gr" style="background:#0099CC; padding:10px;">
+              <div class="sb" style="background:#338800; padding:10px;">4.1</div>
+              <div class="sb" style="background:#880033; padding:10px;">4.2</div>
+            </div>
+          </div>
+        </div>
+        <div class="sb" style="background:violet; padding:10px;">dirac</div>
+      </div>
+      <div class="sb sb-explicit" style="width:200px; background:#0099CC; padding:20px;">
+        200px
+      </div>
+      <div class="sb" style="background:#CC9900; padding:20px;">
+        Frugal
+      </div>
+    </div>
+
+  </body>
+
+</html>

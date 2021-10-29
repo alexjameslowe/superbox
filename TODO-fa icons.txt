@@ -1,6 +1,0 @@
-                    ALEX DOCUMENT THIS- using al classes with fa icons.
-                        <div class="sb sb-boxes footer-socmed-icons">
-                        <i class="sb fa fa-facebook-square"></i>
-                        <i class="sb fa fa-twitter"></i>
-                        <i class="sb fa fa-linkedin"></i>
-                    </div>

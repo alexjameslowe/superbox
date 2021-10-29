@@ -12,10 +12,6 @@
 
 <style>
   
-
-
-
-
 </style>
 
 
@@ -138,6 +134,21 @@ Horizontal sb-boxes. 2 greedy elements.
 </div>
 
 <div class="sb sb-text" style="margin-top:40px;">
+  <b>Test 5.2:</b><br/>
+  3 frugal elements Using the <b>sb-content-space-between</b><br/>
+  This is handy for navigation headers
+</div><button disabled="disabled"></button>
+
+<div class="sb sb-boxes sb-content-space-between" style="padding:20px; background:#CC9900;">
+  <div class="sb sb-explicit" style="width:100px; background:#0099CC; padding:20px;">
+  100px
+  </div>
+  <div class="sb sb-explicit" style="width:200px; background:tomato; padding:20px;">
+  Euler Cauchy Dirac Feynman DeSitter Maldacena DeBroglie Gauss Riemann Newton Einstein
+  </div>
+</div>
+
+<div class="sb sb-text" style="margin-top:40px;">
   <b>Test 6:</b><br/>
   3 frugal elements Using the <b>sb-content-to-right</b>
 </div><button disabled="disabled"></button>
@@ -186,6 +197,18 @@ Horizontal sb-boxes. 2 greedy elements.
   </div>
   <div class="sb sb-explicit" style="width:200px; background:tomato; padding:20px;">
   Euler Cauchy Dirac Feynman DeSitter Maldacena DeBroglie Gauss Riemann Newton Einstein
+  </div>
+</div>
+
+<div class="sb sb-text" style="margin-top:40px;">
+  <b>Test 9:</b><br/>
+  boxes inside a spread element
+</div>
+
+<div class="sb" style="height:400px;">
+  <div class="sb sp-spread sb-boxes sb-greedy-1">
+    <div class="sb" style="padding:20px; background:tomato;">frugal</div>
+    <div class="sb sb-greedy" style="padding:20px; background:#CC9900;">greedy</div>
   </div>
 </div>
 
