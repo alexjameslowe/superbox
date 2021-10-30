@@ -247,9 +247,6 @@
   /**
    * Used for centering, justifying
    */
-  /* .sb.sb-boxes.sb-content-center-v, .sb.sb-rows.sb-content-center-v {
-    align-items: center;
-  } */
   .sb.sb-h.sb-content-center-v {
     align-items: center;
   }
@@ -404,6 +401,13 @@
     right:0px;
     top:0px;
     bottom:0px;
+  }
+  /*Funky little problem with images in vertical containers*/
+  .sb.sb-v > .sb.sb-img-fill:not(.sb-greedy) {
+    flex: 0 1 auto;
+  }
+  .sb.sb-v.sb-gtm2 > .sb.sb-img-fill:not(.sb-greedy) {
+    flex: 0 1 auto;
   }
   .sb-img-fill > img {
     width:100%; 
@@ -601,6 +605,11 @@
     .sb.sb-v.sb-gtm2.sb-content-alt-secondary  {
       align-items: flex-start;
     }
+    .sb.sb-v.sb-gtm2.sb-content-center-v {
+      align-items: center;
+    }
+    
+    
 
     
   }

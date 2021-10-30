@@ -41,88 +41,52 @@
 
 <body style="font-family:Verdana; line-height:1.2; font-size:0.9em; padding:30px;">
 
-    <div class="sb sb-text" style="margin-bottom:40px;">
-        These examples show how vertical-mode elements deal with height. The rules for greediness are basically 
-        the same as the ones for horizontal-mode elements. The only differerce is that we have the 
-        <b>sb-content-strict-height</b> class.
-      </div>
-
     <div class="sb sb-text" style="margin-top:40px;">
-    <b>Test 1</b><br/>
-        Basic example showing vertical-mode. We have two greedy elements, and the rest are frugal. Frugal elements with explicit 
-        heights get the al-explict class, just like in horizontal-mode
-    </div>
-
-    <div class="sb" style="height:400px;">
-        <div class="sb sb-v sb-greedy-2">
-        
-            <div class="sb" style="padding:20px; background-color:tomato">
-                Dirac Cauchy Feynman Lagrange
-            </div>
-            <div class="sb sb-greedy" style="padding:20px; background-color: olive;">
-                Euler Maldacena Ramunajan (Greedy)
-            </div>
-            <div class="sb sb-greedy" style="padding:20px; background-color:orangered">
-                Newton Einstein DeSitter (Greedy)
-            </div>
-            <div class="sb al-explict" style="height:100px; padding:20px; background-color:peru">
-                Maldacena DeSitter Ramunajan (Explicit)
-            </div>
-            <div class="sb al-explict" style="height:100px; padding:20px; background-color:slateblue">Maldacena DeSitter Ramunajan (Explicit)</div>
-        </div>
-        
-    </div>
-    
-    
-
-    <div class="sb sb-text" style="margin-top:40px;">
-    <b>Test 2</b><br/>
-        We have a horizontal-mode container on the left and inside that container, boxes switch from horizontal to vertical conservation, and the same rules of greediness apply. 
-        Note that just like the horizontal-mode examples, al elements that have an explicit height get the sb-explicit class.
-        Note that the gold greedy box with the long content gets a scrolling bar, and that's because we're using sb-content-strict-height on that element.
-    </div>
-
-    <div class="sb sb-h sb-greedy-1" style="margin-top:20px;">
-        <div class="sb sb-explicit" style="background:#00CC00; padding:20px; width:400px;">
-        
-            <div class="sb sb-v sb-content-strict-height sb-content-use-strict-height sb-boxes sb-greedy-2" style="background:#CC00CC;">
-            
-                <div class="sb" style="background:tomato;">
-                    1 header: sized to content
-                    <br/>(but is it really?)
-                </div>
-                <div class="sb sb-greedy" style="background:gold;">
-                    I have a scrolling bar!<br/>
-                    main content: fills remaining space main content: fills remaining space main content: fills remaining space main content: fills remaining space main content: fills remaining space main content: fills remaining space main content: fills remaining space main content: fills remaining space main content: fills remaining space main content: fills remaining space main content: fills remaining space main content: fills remaining space main content: fills remaining space main content: fills remaining space main content: fills remaining space main content: fills remaining space main content: fills remaining space main content: fills remaining space main content: fills remaining space main content: fills remaining space main content: fills remaining space main content: fills remaining space main content: fills remaining space main content: fills remaining space main content: fills remaining space main content: fills remaining space main content: fills remaining space main content: fills remaining space main content: fills remaining space main content: fills remaining space main content: fills remaining space main content: fills remaining space main content: fills remaining space
-                </div>
-                <div class="sb sb-greedy" style="background:orange; min-height:100px;">
-                    main content: fills remaining space main content:
-                </div>
-                <div class="sb sb-explicit" style="background:lightgreen; height:50px;">
-                    footer: fixed height 50px
-                </div>
-    
-            </div>
-        
-        </div>
-        <div class="sb sb-greedy" style="background:#009900; padding:20px;">
-        euler feynman dirac cauchy hawking bohr schroedinger hamilton wheeler maxwell debroglie einstein gauss newton euler feynman dirac cauchy hawking bohr schroedinger hamilton wheeler maxwell debroglie einstein gauss newton euler feynman dirac cauchy hawking bohr schroedinger hamilton wheeler maxwell debroglie einstein gauss newton euler feynman dirac cauchy hawking bohr schroedinger hamilton wheeler maxwell debroglie einstein gauss newton euler feynman dirac cauchy hawking bohr schroedinger hamilton wheeler maxwell debroglie einstein gauss newton euler feynman dirac cauchy hawking bohr schroedinger hamilton wheeler maxwell debroglie einstein gauss newton euler feynman dirac cauchy hawking bohr schroedinger hamilton wheeler maxwell debroglie einstein gauss newton euler feynman dirac cauchy hawking bohr schroedinger hamilton wheeler maxwell debroglie einstein gauss newton euler feynman dirac cauchy hawking bohr schroedinger hamilton wheeler maxwell debroglie einstein gauss newton euler feynman dirac cauchy hawking bohr schroedinger hamilton wheeler maxwell debroglie einstein gauss newton euler feynman dirac cauchy hawking bohr schroedinger hamilton wheeler maxwell debroglie einstein gauss newton euler feynman dirac cauchy hawking bohr schroedinger hamilton wheeler maxwell debroglie einstein gauss newton euler feynman dirac cauchy hawking bohr schroedinger hamilton wheeler maxwell debroglie einstein gauss newton euler feynman dirac cauchy hawking bohr schroedinger hamilton wheeler maxwell debroglie einstein gauss newton euler feynman dirac cauchy hawking bohr 
-        </div>
-        <div class="sb" style="background:#00AA00; padding:20px;">
-        Frugal
-        </div>
+        <b>Vertical collapse</b><br/>
+            We have need for a "collapse" mode for vertical and horizontal containers, and by that we mean a container
+            where it collapses to a frugal width. sb-v and sb-h containers usually take up 100% width.
+            <br/><br/>
+            But there are cases where we just want a containers to only size horizontally based on their contents. 
+            Like for instance if there's some little info box that's supposed to float over the screen, like a drop-down 
+            menu or something like that. The whole point of this framework is that as much as possible, we get away from 
+            worrying about the sizes of containers, and we care more about how they take up space and how they stack.
+            <br/><br/>
+            So here, we have a vertical container that only takes up width frugally. This will necessarily break the concept
+            of greedy and frugal, which is a side-effect of this technique. We also get an extra degree of freedom, which 
+            is that we can designate one of the rows to be the width-setter. So below, the middle element sets the width of 
+            all the other elements, even though it's not actaully the longest/biggest content. This is nice because we can 
+            acheive a good layout that responds to a given content-area and doesn't require any repulsive widths or wrapper elements.
+            <br/><br/>
+            This relies on table display settings. It's a strange technique. All those strange table-displays come in handy 
+            for situations like this. This effect is not possible to do with flexbox. As a result of this reliance and table-display
+            styles, we can use padding. 
+            <br/><br/>
+            Weird things: We can use margin too, although there's a little bug with safari in the below example.
+            Notice that we need extra right-padding to make it behave in that browser. 
+            And it the outer wrapper disobeys the margin-top style.
     </div>
 
 
+    <div class="sb sb-v" style="width:auto; display:table-cell; background:chartreuse; padding:10px; margin-top:40px;">
+        <h1 style="display:table-caption; background:crimson; padding:10px; margin:10px;">HEY This is longer text whats going on here</h1>
+        <div style="display:table-caption; box-sizing: border-box; padding:10px; padding-right:30px; margin:10px; white-space:nowrap; background:cornflowerblue;">
+          I want this one to define the width of the message euler cauchy
+        </div>
+        <div style="display:table-caption; padding:10px; margin:10px;">Testing ABC</div>
+    </div>
+
+
+
+<!--
     <div class="sb sb-text" style="margin-top:40px;">
     <b>Test 3:</b><br/>
     Same as 2, only this time we're doing it without the sb-content-strict-height on the sb-vertical. You'll note that the sb-vertical now actually generates height instead of just consuming it, and therefore the gold greedy box with the long content doesn't have a scrollbar. This is an asymmetry that doesn't have any counterpart in horizontal-conservation situations, but comes in handy during vertical-conservation. You'll also notice that the orange greedy-element accepts min-height.
     </div>
 
-    <div class="sb sb-h sb-greedy-1" style="margin-top:20px;">
+    <div class="sb sb-boxes sb-greedy-1" style="margin-top:20px;">
         <div class="sb sb-explicit" style="background:#00CC00; padding:20px; width:400px;">
         
-            <div class="sb sb-v sb-greedy-2" style="background:#CC00CC;">
+            <div class="sb sb-vertical sb-boxes sb-greedy-2" style="background:#CC00CC;">
             
             <div class="sb" style="background:tomato;">
                 1 header: sized to content
@@ -157,10 +121,10 @@
     it will space the content evenly vertically.
     </div>
 
-    <div class="sb sb-h sb-greedy-1" style="margin-top:20px;">
+    <div class="sb sb-boxes sb-greedy-1" style="margin-top:20px;">
         <div class="sb sb-explicit" style="background:#00CC00; padding:20px; width:400px;">
         
-            <div class="sb sb-v sb-content-space-evenly" style="background:#CC00CC;">
+            <div class="sb sb-vertical sb-boxes sb-content-space-evenly" style="background:#CC00CC;">
             <div class="sb" style="padding:10px; background:#0066CC">ABC</div>
             <div class="sb" style="padding:10px; background:#00CC66">123</div>
             </div>
@@ -174,7 +138,7 @@
         </div>
     </div>
     
-<!--
+
     <div class="sb sb-text" style="margin-top:40px;">
         <b>Test 5</b><br/>
         Same as 4, but this one uses the <b>sb-content-space-around</b> class
